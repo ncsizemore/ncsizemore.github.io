@@ -1,0 +1,89 @@
+---
+title: HLB Model
+author: ''
+math: yes
+date: '2021-02-23'
+slug: hlb-model
+categories: []
+tags: []
+output:
+  blogdown::html_page:
+    number_sections: true
+    toc: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Multi-scale Stochastic Spread of HLB
+
+The spread of [huanglongbing](https://en.wikipedia.org/wiki/Citrus_greening_disease) (黃龍病) through the state of Florida was driven through a variety of (stochastic) processes whose influence was exerted on different spatial and temporal scales.  In generating a cohesive model capable of faithfully explicating spread over large regions, we have to confront the challenge of modeling on these different scales simultaneously.
+
+There are also practical issues of maintaining model parsimony and a general desire for computational efficiency.  All of these factors have influenced our modeling decisions throughout development.  Here we a highlight a few of the implementation choices and design features of our model.
+
+*Note:* This represents a work-in-progress. More details still to come.
+
+# Overview of Model
+
+Timeline of observed events:
+
+- Early 1998: Psyllids arrive to SW Florida (Palm Beach County)
+- Early 1999: Psyllids disperse along urban corridor of SW Florida, reaching Homestead
+- $\leq$ 1999: Small number of *C*Las-positive plants arrive to Homestead
+  - Psyllids acquire *C*Las in Homestead
+- Early 2000s: Widespread, statewide dispersal of uninfected psyllids; heavy infestation of commercial groves
+- 2005: First observation of *C*Las in Florida
+- 2009: Visible symptoms of infection and large blocks of citrus removed from production statewide
+
+## Spatial structure
+
+Our assumed baseline spatial structure is a 0.25 $\times$ 0.25 sq. mile grid overlaying the state.  This is broadly partitioned into three classes of grid cells: (1) urban/developed areas containing host material, eg. citrus or orange jasmine hedges (habitable for psyllids), (2) commercial citrus groves,[^cropscape] (3) areas containing no suitable host material for psyllids.
+
+The model allows parameters to be general functions $f(x,y)$ of grid location $(x,y)$, but for simplicity, we generally assume the parameters to only vary across the three types of cells described above.
+
+## Dispersal mechanisms
+
+The model includes dispersal via several mechanisms.
+
+[1] Natural, local psyllid movement by flight  
+[2] Sales of infected/infested plants from Homestead to retail stores, and from retail stores to consumers.   
+[3] Transport of psyllids via citrus trucks to bulk processing plants.
+
+### Natural Psyllid Movement
+
+As statewide vector population is in the billions, we opt to implement short-range ``natural" movement (eg. flight) in aggregate using convolution with a local dispersal kernel. This also allows to use an optimized library like TensorFlow to take advantage of GPU/hardware acceleration for the more "expensive" parts of the model.
+
+### Sales of Plants
+
+Statewide sales of infected/infested nursery stock in Homestead, FL appears to have played a role in establishment of both uninfected psyllid populations, and later, spread of infected psyllids.  
+
+We fix a selection of ~200 retail stores based using a historical sample of known locations.  We then model sales of plants from Homestead nurseries to these retail stores, and from these stores to individual consumers around the state.  The volume for these sales processes is assumed to be a function of the local population surrounding each store. For sales to individual consumers, we assume that the distribution of the final location of the plant is a decreasing function of distance to the store making the sale.[^customers]
+
+
+### Truck Dispersal
+
+Citrus is aggregated to a lower resolution and thresholded to generate a smaller subset of harvesting locations. We then extract routes from harvesting locations to processing plants using [`OpenStreetMap`](https://www.openstreetmap.org/) utilizing `osrm`.
+
+Each day, we then determine active truck routes, and sample these to generate dispersal locations. Here is an example:
+```{r plot-sample, echo=TRUE}
+sample <- readRDS("../../R/sample.rds")
+mapview::mapview(sample)
+```
+
+
+![](/day0534.png)
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+[^cropscape]: Identified using [NASS Cropscape](https://nassgeodata.gmu.edu/CropScape/) historical data.
+[^customers]: Customers may travel long distances after buying a plant, but this is not likely.

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>HLB Model</title>
+    <meta name="description" content="A simple monospaced resume theme for Hugo.">
+    <meta name="author" content='Nicholas Sizemore'>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="../sass/researcher.min.css">
+
+    
+        <link rel="icon" type="image/ico" href="../favicon.ico">
+    
+
+    
+        
+    
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false}
+            ]
+        });
+    });
+</script>
+
+    <body><div class="container mt-5">
+    <nav class="navbar navbar-expand-sm flex-column flex-sm-row text-nowrap p-0">
+        <a class="navbar-brand mx-0 mr-sm-auto" href="../">
+          
+          Nicholas Sizemore
+        </a>
+        <div class="navbar-nav flex-row flex-wrap justify-content-center">
+            
+                
+                
+                    <a class="nav-item nav-link" href="../research/">
+                        Research
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="../projects/">
+                        Projects
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="../teaching/">
+                        Teaching
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="../contact/">
+                        Contact
+                    </a>
+                    
+                
+            
+        </div>
+    </nav>
+</div>
+<hr>
+<div id="content">
+<div class="container">
+    
+<script src="../hlb-model/index_files/header-attrs/header-attrs.js"></script>
+<script src="../hlb-model/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="../hlb-model/index_files/jquery/jquery.min.js"></script>
+<link href="../hlb-model/index_files/leaflet/leaflet.css" rel="stylesheet" />
+<script src="../hlb-model/index_files/leaflet/leaflet.js"></script>
+<link href="../hlb-model/index_files/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="../hlb-model/index_files/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="../hlb-model/index_files/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="../hlb-model/index_files/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="../hlb-model/index_files/leaflet-binding/leaflet.js"></script>
+<script src="../hlb-model/index_files/leaflet-providers/leaflet-providers_1.9.0.js"></script>
+<script src="../hlb-model/index_files/leaflet-providers-plugin/leaflet-providers-plugin.js"></script>
+<script src="../hlb-model/index_files/FlatGeoBuf/fgb.js"></script>
+<script src="../hlb-model/index_files/FlatGeoBuf/flatgeobuf-geojson.min.js"></script>
+<script src="../hlb-model/index_files/chromajs/chroma.min.js"></script>
+<link id="sample-1-attachment" rel="attachment" href="index_files/sample/sample_layer.fgb"/>
+<link href="../hlb-model/index_files/HomeButton/home-button.css" rel="stylesheet" />
+<script src="../hlb-model/index_files/HomeButton/home-button.js"></script>
+<script src="../hlb-model/index_files/HomeButton/easy-button-src.min.js"></script>
+<script src="../hlb-model/index_files/clipboard/setClipboardText.js"></script>
+
+<div id="TOC">
+<ul>
+<li><a href="#multi-scale-stochastic-spread-of-hlb"><span class="toc-section-number">1</span> Multi-scale Stochastic Spread of HLB</a></li>
+<li><a href="#overview-of-model"><span class="toc-section-number">2</span> Overview of Model</a>
+<ul>
+<li><a href="#spatial-structure"><span class="toc-section-number">2.1</span> Spatial structure</a></li>
+<li><a href="#dispersal-mechanisms"><span class="toc-section-number">2.2</span> Dispersal mechanisms</a>
+<ul>
+<li><a href="#natural-psyllid-movement"><span class="toc-section-number">2.2.1</span> Natural Psyllid Movement</a></li>
+<li><a href="#sales-of-plants"><span class="toc-section-number">2.2.2</span> Sales of Plants</a></li>
+<li><a href="#truck-dispersal"><span class="toc-section-number">2.2.3</span> Truck Dispersal</a></li>
+</ul></li>
+<li><a href="#including-plots"><span class="toc-section-number">2.3</span> Including Plots</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="multi-scale-stochastic-spread-of-hlb" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Multi-scale Stochastic Spread of HLB</h1>
+<p>The spread of <a href="https://en.wikipedia.org/wiki/Citrus_greening_disease">huanglongbing</a> (黃龍病) through the state of Florida was driven through a variety of (stochastic) processes whose influence was exerted on different spatial and temporal scales. In generating a cohesive model capable of faithfully explicating spread over large regions, we have to confront the challenge of modeling on these different scales simultaneously.</p>
+<p>There are also practical issues of maintaining model parsimony and a general desire for computational efficiency. All of these factors have influenced our modeling decisions throughout development. Here we a highlight a few of the implementation choices and design features of our model.</p>
+<p><em>Note:</em> This represents a work-in-progress. More details still to come.</p>
+</div>
+<div id="overview-of-model" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Overview of Model</h1>
+<p>Timeline of observed events:</p>
+<ul>
+<li>Early 1998: Psyllids arrive to SW Florida (Palm Beach County)</li>
+<li>Early 1999: Psyllids disperse along urban corridor of SW Florida, reaching Homestead</li>
+<li><span class="math inline">\(\leq\)</span> 1999: Small number of <em>C</em>Las-positive plants arrive to Homestead
+<ul>
+<li>Psyllids acquire <em>C</em>Las in Homestead</li>
+</ul></li>
+<li>Early 2000s: Widespread, statewide dispersal of uninfected psyllids; heavy infestation of commercial groves</li>
+<li>2005: First observation of <em>C</em>Las in Florida</li>
+<li>2009: Visible symptoms of infection and large blocks of citrus removed from production statewide</li>
+</ul>
+<div id="spatial-structure" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Spatial structure</h2>
+<p>Our assumed baseline spatial structure is a 0.25 <span class="math inline">\(\times\)</span> 0.25 sq. mile grid overlaying the state. This is broadly partitioned into three classes of grid cells: (1) urban/developed areas containing host material, eg. citrus or orange jasmine hedges (habitable for psyllids), (2) commercial citrus groves,<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> (3) areas containing no suitable host material for psyllids.</p>
+<p>The model allows parameters to be general functions <span class="math inline">\(f(x,y)\)</span> of grid location <span class="math inline">\((x,y)\)</span>, but for simplicity, we generally assume the parameters to only vary across the three types of cells described above.</p>
+</div>
+<div id="dispersal-mechanisms" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Dispersal mechanisms</h2>
+<p>The model includes dispersal via several mechanisms.</p>
+<p>[1] Natural, local psyllid movement by flight<br />
+[2] Sales of infected/infested plants from Homestead to retail stores, and from retail stores to consumers.<br />
+[3] Transport of psyllids via citrus trucks to bulk processing plants.</p>
+<div id="natural-psyllid-movement" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Natural Psyllid Movement</h3>
+<p>As statewide vector population is in the billions, we opt to implement short-range ``natural" movement (eg. flight) in aggregate using convolution with a local dispersal kernel. This also allows to use an optimized library like TensorFlow to take advantage of GPU/hardware acceleration for the more “expensive” parts of the model.</p>
+</div>
+<div id="sales-of-plants" class="section level3" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Sales of Plants</h3>
+<p>Statewide sales of infected/infested nursery stock in Homestead, FL appears to have played a role in establishment of both uninfected psyllid populations, and later, spread of infected psyllids.</p>
+<p>We fix a selection of ~200 retail stores based using a historical sample of known locations. We then model sales of plants from Homestead nurseries to these retail stores, and from these stores to individual consumers around the state. The volume for these sales processes is assumed to be a function of the local population surrounding each store. For sales to individual consumers, we assume that the distribution of the final location of the plant is a decreasing function of distance to the store making the sale.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+</div>
+<div id="truck-dispersal" class="section level3" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Truck Dispersal</h3>
+<p>Citrus is aggregated to a lower resolution and thresholded to generate a smaller subset of harvesting locations. We then extract routes from harvesting locations to processing plants using <a href="https://www.openstreetmap.org/"><code>OpenStreetMap</code></a> utilizing <code>osrm</code>.</p>
+<p>Each day, we then determine active truck routes, and sample these to generate dispersal locations. Here is an example:</p>
+<pre class="r"><code>sample &lt;- readRDS(&quot;../../R/sample.rds&quot;)
+mapview::mapview(sample)</code></pre>
+<div id="htmlwidget-1" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"minZoom":1,"maxZoom":52,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"preferCanvas":false,"bounceAtZoomLimits":false,"maxBounds":[[[-90,-370]],[[90,370]]]},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron","CartoDB.Positron","CartoDB.Positron",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["CartoDB.DarkMatter","CartoDB.DarkMatter","CartoDB.DarkMatter",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenStreetMap","OpenStreetMap","OpenStreetMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["Esri.WorldImagery","Esri.WorldImagery","Esri.WorldImagery",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenTopoMap","OpenTopoMap","OpenTopoMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"createMapPane","args":["point",440]},{"method":"addFlatGeoBuf","args":["sample","sample",null,null,null,{"radius":6,"stroke":true,"color":"#333333","weight":1,"opacity":0.9,"fill":true,"fillColor":"#6666ff","fillOpacity":0.6},{"pane":"point"},null,{"radius":{"to":[3,15],"from":[3,15]},"weight":{"to":[1,10],"from":[1,10]},"opacity":{"to":[0,1],"from":[0,1]},"fillOpacity":{"to":[0,1],"from":[0,1]}}]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"bottomleft"}]},{"method":"addHomeButton","args":[-82.5635944828277,26.1433124839105,-80.1298950955155,28.8746439304756,"sample","Zoom to sample","<strong> sample <\/strong>","bottomright"]},{"method":"addLayersControl","args":[["CartoDB.Positron","CartoDB.DarkMatter","OpenStreetMap","Esri.WorldImagery","OpenTopoMap"],"sample",{"collapsed":true,"autoZIndex":true,"position":"topleft"}]}],"fitBounds":[26.1433124839105,-82.5635944828277,28.8746439304756,-80.1298950955155,[]]},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (\n      function(el, x, data) {\n      // get the leaflet map\n      var map = this; //HTMLWidgets.find('#' + el.id);\n      // we need a new div element because we have to handle\n      // the mouseover output separately\n      // debugger;\n      function addElement () {\n      // generate new div Element\n      var newDiv = $(document.createElement('div'));\n      // append at end of leaflet htmlwidget container\n      $(el).append(newDiv);\n      //provide ID and style\n      newDiv.addClass('lnlt');\n      newDiv.css({\n      'position': 'relative',\n      'bottomleft':  '0px',\n      'background-color': 'rgba(255, 255, 255, 0.7)',\n      'box-shadow': '0 0 2px #bbb',\n      'background-clip': 'padding-box',\n      'margin': '0',\n      'padding-left': '5px',\n      'color': '#333',\n      'font': '9px/1.5 \"Helvetica Neue\", Arial, Helvetica, sans-serif',\n      'z-index': '700',\n      });\n      return newDiv;\n      }\n\n\n      // check for already existing lnlt class to not duplicate\n      var lnlt = $(el).find('.lnlt');\n\n      if(!lnlt.length) {\n      lnlt = addElement();\n\n      // grab the special div we generated in the beginning\n      // and put the mousmove output there\n\n      map.on('mousemove', function (e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                           ' lon: ' + (e.latlng.lng).toFixed(5) +\n                           ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                           ' | zoom: ' + map.getZoom() +\n                           ' | x: ' + L.CRS.EPSG3857.project(e.latlng).x.toFixed(0) +\n                           ' | y: ' + L.CRS.EPSG3857.project(e.latlng).y.toFixed(0) +\n                           ' | epsg: 3857 ' +\n                           ' | proj4: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs ');\n      } else {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      }\n      });\n\n      // remove the lnlt div when mouse leaves map\n      map.on('mouseout', function (e) {\n      var strip = document.querySelector('.lnlt');\n      if( strip !==null) strip.remove();\n      });\n\n      };\n\n      //$(el).keypress(67, function(e) {\n      map.on('preclick', function(e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      var txt = document.querySelector('.lnlt').textContent;\n      console.log(txt);\n      //txt.innerText.focus();\n      //txt.select();\n      setClipboardText('\"' + txt + '\"');\n      }\n      });\n\n      }\n      ).call(this.getMap(), el, x, data);\n}","data":null},{"code":"function(el, x, data) {\n  return (function(el,x,data){\n           var map = this;\n\n           map.on('keypress', function(e) {\n               console.log(e.originalEvent.code);\n               var key = e.originalEvent.code;\n               if (key === 'KeyE') {\n                   var bb = this.getBounds();\n                   var txt = JSON.stringify(bb);\n                   console.log(txt);\n\n                   setClipboardText('\\'' + txt + '\\'');\n               }\n           })\n        }).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
+<p><img src="../day0534.png" /></p>
+</div>
+</div>
+<div id="including-plots" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Including Plots</h2>
+<p>You can also embed plots, for example:</p>
+<p><img src="../hlb-model/index_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Identified using <a href="https://nassgeodata.gmu.edu/CropScape/">NASS Cropscape</a> historical data.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Customers may travel long distances after buying a plant, but this is not likely.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+
+</div>
+
+        </div><div id="footer" class="mb-5">
+    
+        <hr>
+        <div class="container text-center">
+            <a href="../"><small></small></a>
+        </div>
+    
+</div>
+</body>
+</html>
