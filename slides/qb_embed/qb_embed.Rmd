@@ -1,6 +1,6 @@
 ---
 title: "`Qbiome`"
-subtitle: "Reverse-engineering the Rules of Organization and Maturation  in the Developing Infant Microbiome"
+subtitle: "Reverse-engineering the Infant Microbiome To Predict Severe Neurodevelopmental Deficits"
 #author: 
 date: "Last modified: `r Sys.Date()`"
 output:
@@ -42,7 +42,13 @@ output:
 | Length of stay, days, mean $\pm$ SD    | 77.89 $\pm$ 34.77    | 103.27 $\pm$ 61.21 |
 | PMA at discharge, weeks, mean $\pm$ SD | 39.04 $\pm$ 3.80     | 41.13 $\pm$ 6.80   |
 
-# The `Q-net`: A Linked Network of Predictors
+# The `Q-net`: A Linked Collection of Predictors
+
+Goal: an ecosystem model expressive enough to learn nontrivial dynamics yet capable of generating actionable clinical insights
+
+Direct modeling of the ecosystem is difficult due to limited understanding of microbial dynamics; standard/predictive machine learning methods are less interpretable and require more data than we have
+
+## The `Q-net`: A Linked Collection of Predictors
 
 <style>
 .container{
@@ -130,8 +136,17 @@ Recover patterns in the ecosystem (even from small cohort sizes)
 ::::
 :::
 
- 
+## UChicago cohort
 
+<p class="stretch"><img src="img/forecasts_UC.png" style="display:block; margin:auto">
+</p>
+ 
+## Boston cohort
+
+<p class="stretch"><img src="img/forecasts_Boston.png" style="display:block; margin:auto">
+</p>
+
+<!--- 
 ##
 
 <p class="stretch"><img src="img/forecasts1.png" style="display:block; margin:auto"><br/>
@@ -155,6 +170,7 @@ Recover patterns in the ecosystem (even from small cohort sizes)
 <p class="stretch"><img src="img/forecasts4.png" style="display:block; margin:auto"><br/>
 <img src="img/leg.png" style="display:block; margin:auto; width:50%">
 </p>
+-->
 
 # Forecasting of Distinct Clinical Cohorts
 

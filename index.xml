@@ -6,6 +6,16 @@
     <description>Recent content in About on Nicholas Sizemore</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Microbiome dynamics</title>
+      <link>/microbiome/</link>
+      <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/microbiome/</guid>
+      <description>  1 Dynamics of the Microbiome   1 Dynamics of the Microbiome Note: This page represents a work-in-progress. More details still to come. However, some slides for a recent talk discussing this model are available here.
+ </description>
+    </item>
+    
+    <item>
       <title>HLB Model</title>
       <link>/hlb-model/</link>
       <pubDate>Tue, 23 Feb 2021 00:00:00 +0000</pubDate>
@@ -43,8 +53,8 @@ Chicago, IL 60637
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/projects/</guid>
-      <description>Current Projects Stochastic spread of HLB in Florida Analyzed and explicated the historical spread of citrus greening disease in Florida via stochastic dispersal mechanisms of varied temporal and spatial scales. Collaborated with domain experts at USDA and FDACS to develop a comprehensive spatially explicit, statewide-scale model. Implemented a robust computationally-efficient geo-spatial simulation platform using a combination of TensorFlow and R.
-Spectral conditions in nonconvex problems Motivated by problems in cancer diagnosis (and more general problems in data science/machine learning), we observe strong computational/empirical evidence for the existence of regimes in which there are provable, exact guarantees for the efficacy of natural spectral estimators as solutions to a class of discrete (nonconvex) optimization problems.</description>
+      <description>Current Projects Inferring dynamics in microbial communities From a small number of longitudinal microbiome profiles in pre-term infants, used a novel machine learning approach to infer the complex time-varying ecoystem dependencies present. From the inferred structure, generated accurate forecasts of microbial evolution, identified infants at risk of poor cognitive development, and found interpretable, testable hypotheses for the key relationships driving network behavior.
+Stochastic spread of HLB in Florida Analyzed and explicated the historical spread of citrus greening disease in Florida via stochastic dispersal mechanisms of varied temporal and spatial scales.</description>
     </item>
     
     <item>
@@ -53,8 +63,10 @@ Spectral conditions in nonconvex problems Motivated by problems in cancer diagno
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/research/</guid>
-      <description>Research Interests I have a fairly wide variety of mathematical interests. My research is typically centered around computational problems, and includes work on interdisciplinary applications and theoretical problems explored from a computational perspective. This often includes things like:
- Stochastic processes and applications Mathematical data analysis and machine learning A heavy dose of programming in various languages  Current/ongoing projects are listed below; see the Projects page for more info.</description>
+      <description>Research Interests Applied mathematician focused on the modeling and understanding of high-dimensional complex systems by integrating modern tools from the theory of stochastic processes, machine learning, and mathematical data science. This includes work on interdisciplinary applications and theoretical problems explored from a computational perspective.
+Current/ongoing projects are listed below; see the Projects page for more details.
+Current Projects &amp;ndash; Inferring dynamics of the microbiome
+&amp;ndash; Algorithmic detection of deceptive/adversial responses to surveys</description>
     </item>
     
     <item>
@@ -63,10 +75,10 @@ Spectral conditions in nonconvex problems Motivated by problems in cancer diagno
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/teaching/</guid>
-      <description>I am not currently teaching any courses. See below for past courses.
+      <description>While I am not currently teaching any courses, I have several years of experience as an instructor through appointments at the following institutions.
 University of Florida
-As a graduate student at UF, I taught classes as an instructor (responsible for all course content), and as a teaching assistant. Specific courses include:
- MAC 1140: Precalculus Algebra (instructor for both traditional and online) MAC 1147: Precalculus Algebra &amp;amp; Trigonometry (TA) MAC 2311: Calculus I (TA) MAC 2312: Calculus II (TA) MAC 2313: Calculus III (traditional TA; instructor online)  Western Carolina University</description>
+As a graduate student at UF, I taught classes as the primary instructor (responsible for all course content), and as a teaching assistant. Specific courses include:
+ MAC 1140: Precalculus Algebra MAC 1147: Precalculus Algebra &amp;amp; Trigonometry MAC 2311: Calculus I MAC 2312: Calculus II MAC 2313: Calculus III  Western Carolina University</description>
     </item>
     
   </channel>
