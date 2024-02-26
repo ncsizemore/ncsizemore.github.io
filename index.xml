@@ -6,13 +6,33 @@
     <description>Recent content in About on Nicholas Sizemore</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Algorithmic lie detection</title>
+      <link>/deception/</link>
+      <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/deception/</guid>
+      <description>Status: Manuscript in preparation.
+AbstractExaggerating or faking the symptoms of a mental health disorder can confound structured diagnostic interviews and hinder clinical psychiatric assessments~. We introduce an artificial intelligence (AI) framework for detecting symptom fabrication in mental health assessments, illustrated here for Post-Traumatic Stress Disorder (PTSD) diagnoses, for which malingering is a known problem~, partially ascribable to the potential for secondary financial gain from positive diagnoses. Algorithm employs novel generative AI to infer statistical dependencies inherent in true response patterns, and flags responses which violate these subtle constraints.</description>
+    </item>
+    
+    <item>
       <title>Microbiome dynamics</title>
       <link>/microbiome/</link>
       <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>/microbiome/</guid>
-      <description>  1 Dynamics of the Microbiome   1 Dynamics of the Microbiome Note: This page represents a work-in-progress. More details still to come. However, some slides for a recent talk discussing this model are available here.
- </description>
+      <description>Status: This paper has been accepted and will appear in Science Advances. An older preprint is available here.
+AbstractDysbiosis in the infant microbiome is linked to impaired cognitive development~. Yet, patient-specific microbiome variations hinder the definition of normal ranges~, making the microbial impact on neurodevelopment unclear. This study introduces a digital twin of the infant microbiome, forecasting ecosystem trajectories from initial observations. Using 16S rRNA profiles from 88 preterm infants (398 fecal samples and 32,942 abundance estimates for 91 microbial classes), the model predicts abundance dynamics with \(R^2=0.</description>
+    </item>
+    
+    <item>
+      <title>Recognition of AI-generated text</title>
+      <link>/ai-text/</link>
+      <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/ai-text/</guid>
+      <description>Status: Manuscript in preparation.
+AbstractRecognizing AI generated text by estimating the entropy rate of the symbol stream over the 26+1 letter alphabet (English). We hypothesize that human generated content has a higher entropy rate. Shannon’s experimental approach suggested that English has an entropy rate of 1 bit per letter; here we show that AI generated content typically has much less. We call this algorithm NERO: Nonparametric Entropy-Rate Oracle.</description>
     </item>
     
     <item>
@@ -21,7 +41,8 @@
       <pubDate>Tue, 23 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/hlb-model/</guid>
-      <description>1 Multi-scale Stochastic Spread of HLB 2 Overview of Model  2.1 Spatial structure 2.2 Dispersal mechanisms  2.2.1 Local Psyllid Movement 2.2.2 Sales of Plants 2.2.3 Truck Dispersal     1 Multi-scale Stochastic Spread of HLB The spread of huanglongbing (黃龍病) through the state of Florida was driven through a variety of (stochastic) processes whose influence was exerted on different spatial and temporal scales. In generating a cohesive model capable of faithfully explicating spread over large regions, we have to confront the challenge of modeling on these different scales simultaneously.</description>
+      <description>Status: Manuscript in preparation. (Note that some of the details below are outdated - throughout this project, our understanding of HLB dynamics has evolved substantially.)
+1 Multi-scale Stochastic Spread of HLBThe spread of huanglongbing (黃龍病) through the state of Florida was driven through a variety of (stochastic) processes whose influence was exerted on different spatial and temporal scales. In generating a cohesive model capable of faithfully explicating spread over large regions, we have to confront the challenge of modeling on these different scales simultaneously.</description>
     </item>
     
     <item>
@@ -48,13 +69,22 @@ Chicago, IL 60637
     </item>
     
     <item>
+      <title>Experience</title>
+      <link>/experience/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/experience/</guid>
+      <description> Postdoctoral Scholar, University of Chicago. Data Analyst, University of Florida.  </description>
+    </item>
+    
+    <item>
       <title>Projects</title>
       <link>/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/projects/</guid>
-      <description>Current Projects Inferring dynamics in microbial communities From a small number of longitudinal microbiome profiles in pre-term infants, used a novel machine learning approach to infer the complex time-varying ecoystem dependencies present. From the inferred structure, generated accurate forecasts of microbial evolution, identified infants at risk of poor cognitive development, and found interpretable, testable hypotheses for the key relationships driving network behavior.
-Stochastic spread of HLB in Florida Analyzed and explicated the historical spread of citrus greening disease in Florida via stochastic dispersal mechanisms of varied temporal and spatial scales.</description>
+      <description>Projects Digital Twins of Infant Microbiomes From a small number of longitudinal microbiome profiles in pre-term infants, used a novel machine learning approach to infer the complex time-varying ecoystem dependencies present. From the inferred structure, generated accurate forecasts of microbial evolution, identified infants at risk of poor cognitive development, and found interpretable, testable hypotheses for the key relationships driving network behavior.
+VeRITAS: Algorithmic Lie Detection Developed artificial intelligence (AI) framework for detecting general deception in structured interviews.</description>
     </item>
     
     <item>
@@ -63,10 +93,7 @@ Stochastic spread of HLB in Florida Analyzed and explicated the historical sprea
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/research/</guid>
-      <description>Research Interests Applied mathematician focused on the modeling and understanding of high-dimensional complex systems by integrating modern tools from the theory of stochastic processes, machine learning, and mathematical data science. This includes work on interdisciplinary applications and theoretical problems explored from a computational perspective.
-Current/ongoing projects are listed below; see the Projects page for more details.
-Current Projects &amp;ndash; Inferring dynamics of the microbiome
-&amp;ndash; Algorithmic detection of deceptive/adversial responses to surveys</description>
+      <description>Projects  Digital twins for computational interrogation of the human (esp. infant) microbiome Information-theoretic identification of AI/LLM-generated content Algorithmic detection of lies and/or adversarially deceptive responses Multi-scale stochastic modeling of statewide spread of Huanglongbing disease in Florida Spectral conditions for exact solutions to certain nonconvex problems arising in data science (eg. $\mathbb{Z}/2\mathbb{Z}$ synchronization)  Publications  A Digital Twin of the Infant Microbiome to Predict Neurodevelopmental Deficits (with K. Oliphant, R.</description>
     </item>
     
     <item>
