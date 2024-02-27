@@ -12,7 +12,7 @@
       
       <guid>/deception/</guid>
       <description>Status: Manuscript in preparation.
-AbstractExaggerating or faking the symptoms of a mental health disorder can confound structured diagnostic interviews and hinder clinical psychiatric assessments~. We introduce an artificial intelligence (AI) framework for detecting symptom fabrication in mental health assessments, illustrated here for Post-Traumatic Stress Disorder (PTSD) diagnoses, for which malingering is a known problem~, partially ascribable to the potential for secondary financial gain from positive diagnoses. Algorithm employs novel generative AI to infer statistical dependencies inherent in true response patterns, and flags responses which violate these subtle constraints.</description>
+Abstract  Exaggerating or faking the symptoms of a mental health disorder can confound structured diagnostic interviews and hinder clinical psychiatric assessments~. We introduce an artificial intelligence (AI) framework for detecting symptom fabrication in mental health assessments, illustrated here for Post-Traumatic Stress Disorder (PTSD) diagnoses, for which malingering is a known problem~, partially ascribable to the potential for secondary financial gain from positive diagnoses. Algorithm employs novel generative AI to infer statistical dependencies inherent in true response patterns, and flags responses which violate these subtle constraints.</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@ AbstractExaggerating or faking the symptoms of a mental health disorder can co
       
       <guid>/microbiome/</guid>
       <description>Status: This paper has been accepted and will appear in Science Advances. An older preprint is available here.
-AbstractDysbiosis in the infant microbiome is linked to impaired cognitive development~. Yet, patient-specific microbiome variations hinder the definition of normal ranges~, making the microbial impact on neurodevelopment unclear. This study introduces a digital twin of the infant microbiome, forecasting ecosystem trajectories from initial observations. Using 16S rRNA profiles from 88 preterm infants (398 fecal samples and 32,942 abundance estimates for 91 microbial classes), the model predicts abundance dynamics with \(R^2=0.</description>
+Abstract  Dysbiosis in the infant microbiome is linked to impaired cognitive development~. Yet, patient-specific microbiome variations hinder the definition of normal ranges~, making the microbial impact on neurodevelopment unclear. This study introduces a digital twin of the infant microbiome, forecasting ecosystem trajectories from initial observations. Using 16S rRNA profiles from 88 preterm infants (398 fecal samples and 32,942 abundance estimates for 91 microbial classes), the model predicts abundance dynamics with \(R^2=0.</description>
     </item>
     
     <item>
@@ -32,7 +32,7 @@ AbstractDysbiosis in the infant microbiome is linked to impaired cognitive dev
       
       <guid>/ai-text/</guid>
       <description>Status: Manuscript in preparation.
-AbstractRecognizing AI generated text by estimating the entropy rate of the symbol stream over the 26+1 letter alphabet (English). We hypothesize that human generated content has a higher entropy rate. Shannon’s experimental approach suggested that English has an entropy rate of 1 bit per letter; here we show that AI generated content typically has much less. We call this algorithm NERO: Nonparametric Entropy-Rate Oracle.</description>
+Abstract  Recognizing AI generated text by estimating the entropy rate of the symbol stream over the 26+1 letter alphabet (English). We hypothesize that human generated content has a higher entropy rate. Shannon’s experimental approach suggested that English has an entropy rate of 1 bit per letter; here we show that AI generated content typically has much less. We call this algorithm NERO: Nonparametric Entropy-Rate Oracle.</description>
     </item>
     
     <item>
@@ -42,7 +42,7 @@ AbstractRecognizing AI generated text by estimating the entropy rate of the sy
       
       <guid>/hlb-model/</guid>
       <description>Status: Manuscript in preparation. (Note that some of the details below are outdated - throughout this project, our understanding of HLB dynamics has evolved substantially.)
-1 Multi-scale Stochastic Spread of HLBThe spread of huanglongbing (黃龍病) through the state of Florida was driven through a variety of (stochastic) processes whose influence was exerted on different spatial and temporal scales. In generating a cohesive model capable of faithfully explicating spread over large regions, we have to confront the challenge of modeling on these different scales simultaneously.</description>
+1 Multi-scale Stochastic Spread of HLB The spread of huanglongbing (黃龍病) through the state of Florida was driven through a variety of (stochastic) processes whose influence was exerted on different spatial and temporal scales. In generating a cohesive model capable of faithfully explicating spread over large regions, we have to confront the challenge of modeling on these different scales simultaneously.</description>
     </item>
     
     <item>
@@ -93,7 +93,7 @@ VeRITAS: Algorithmic Lie Detection Developed artificial intelligence (AI) framew
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/research/</guid>
-      <description>Projects  Digital twins for computational interrogation of the human (esp. infant) microbiome Information-theoretic identification of AI/LLM-generated content Algorithmic detection of lies and/or adversarially deceptive responses Multi-scale stochastic modeling of statewide spread of Huanglongbing disease in Florida Spectral conditions for exact solutions to certain nonconvex problems arising in data science (eg. $\mathbb{Z}/2\mathbb{Z}$ synchronization)  Publications  A Digital Twin of the Infant Microbiome to Predict Neurodevelopmental Deficits (with K. Oliphant, R.</description>
+      <description>Projects  Digital twins for analysis of microbiome ecosystems Entropy-rate identification of AI/LLM-generated content Algorithmic detection of lies and/or adversarial deception Multi-scale stochastic modeling of Huanglongbing disease in Florida Spectral conditions for exact solutions to certain nonconvex problems arising in data science (eg. $\mathbb{Z}/2\mathbb{Z}$ synchronization)  Publications  A Digital Twin of the Infant Microbiome to Predict Neurodevelopmental Deficits (with K. Oliphant, R. Zheng, E. Claud, I. Chattopadhyay). Science Advances (2024 - to appear).</description>
     </item>
     
     <item>
