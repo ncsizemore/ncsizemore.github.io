@@ -16,6 +16,16 @@ Abstract  Exaggerating or faking the symptoms of a mental health disorder can co
     </item>
     
     <item>
+      <title>Group partitions</title>
+      <link>/group-partitions/</link>
+      <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/group-partitions/</guid>
+      <description>Status: See our paper in Advances in Group Theory and Applications.
+The covering number \(\sigma(G)\) is the minimal number of subgroups needed to write \(G\) as a union of its proper subgroups. This is a classically studied invariant of \(G\) that remains of interest today (eg. ). If we further require that the subgroups have trivial pairwise intersection, this defines the partition number \(\rho(G)\) (note: not all groups admit either a cover or partition by subgroups).</description>
+    </item>
+    
+    <item>
       <title>Microbiome dynamics</title>
       <link>/microbiome/</link>
       <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
@@ -36,13 +46,23 @@ Abstract  Recognizing AI generated text by estimating the entropy rate of the sy
     </item>
     
     <item>
+      <title>Spectral estimators</title>
+      <link>/spectral/</link>
+      <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/spectral/</guid>
+      <description>Status: Investigating.
+A current project of interest involves developing provably optimal solution guarantees to nonconvex optimization problems under certain regimes. An example problem instance is the well-known \(\mathbb{Z}/2\) quadratic program: \[ \max_{x \in \{-1,1\}^n} x^T A x, \] where \(A \succeq 0\) is typically assumed positive semidefinite. With no domain restriction, the optimal \(x\) is the leading eigenvector of \(A\). By restricting to the Boolean cube, this becomes NP-hard (though it can be approximated using semidefinite programming relaxations and the sum-of-squares/Lasserre hierarchy; see eg.</description>
+    </item>
+    
+    <item>
       <title>HLB Model</title>
       <link>/hlb-model/</link>
       <pubDate>Tue, 23 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/hlb-model/</guid>
-      <description>Status: Manuscript in preparation. (Note that some of the details below are outdated - throughout this project, our understanding of HLB dynamics has evolved substantially.)
-1 Multi-scale Stochastic Spread of HLB The spread of huanglongbing (黃龍病) through the state of Florida was driven through a variety of (stochastic) processes whose influence was exerted on different spatial and temporal scales. In generating a cohesive model capable of faithfully explicating spread over large regions, we have to confront the challenge of modeling on these different scales simultaneously.</description>
+      <description>Status: Manuscript in preparation. (Note that some of the details below are outdated - recently, our understanding of the key dynamics of HLB spread have evolved substantially, and this page will be updated to reflect that in the near future.)
+1 Multi-scale Stochastic Spread of HLB The spread of huanglongbing (黃龍病) through the state of Florida was driven through a variety of (stochastic) processes whose influence was exerted on different spatial and temporal scales.</description>
     </item>
     
     <item>
@@ -93,7 +113,7 @@ VeRITAS: Algorithmic Lie Detection Developed artificial intelligence (AI) framew
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/research/</guid>
-      <description>Projects  Digital twins for analysis of microbiome ecosystems Entropy-rate identification of AI/LLM-generated content Algorithmic detection of lies and/or adversarial deception Multi-scale stochastic modeling of Huanglongbing disease in Florida Spectral conditions for exact solutions to certain nonconvex problems arising in data science (eg. $\mathbb{Z}/2\mathbb{Z}$ synchronization)  Publications  A Digital Twin of the Infant Microbiome to Predict Neurodevelopmental Deficits (with K. Oliphant, R. Zheng, E. Claud, I. Chattopadhyay). Science Advances (2024 - to appear).</description>
+      <description>Projects  Digital twins for analysis of microbiome ecosystems Entropy-rate identification of AI/LLM-generated content Algorithmic detection of lies, malingering, and/or adversarial deception Multi-scale stochastic modeling of Huanglongbing disease in Florida Exact spectral solutions to certain nonconvex optimization problems Computational group theory  Publications  A Digital Twin of the Infant Microbiome to Predict Neurodevelopmental Deficits (with K. Oliphant, R. Zheng, E. Claud, I. Chattopadhyay). Science Advances (2024 - to appear). Partition Numbers of Finite Solvable Groups (with T.</description>
     </item>
     
     <item>
