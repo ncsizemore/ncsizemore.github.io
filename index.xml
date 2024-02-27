@@ -22,7 +22,7 @@ Abstract  Exaggerating or faking the symptoms of a mental health disorder can co
       
       <guid>/group-partitions/</guid>
       <description>Status: See our paper in Advances in Group Theory and Applications.
-The covering number \(\sigma(G)\) is the minimal number of subgroups needed to write \(G\) as a union of its proper subgroups. This is a classically studied invariant of \(G\) that remains of interest today (eg. ). If we further require that the subgroups have trivial pairwise intersection, this defines the partition number \(\rho(G)\) (note: not all groups admit either a cover or partition by subgroups).</description>
+The covering number \(\sigma(G)\) is the minimal number of subgroups needed to write \(G\) as a union of its proper subgroups. This is a classically studied invariant of \(G\) that remains of interest today eg. (1). If we further require that the subgroups have trivial pairwise intersection, this defines the partition number \(\rho(G)\) (note: not all groups admit either a cover or partition by subgroups).</description>
     </item>
     
     <item>
@@ -32,7 +32,7 @@ The covering number \(\sigma(G)\) is the minimal number of subgroups needed to w
       
       <guid>/microbiome/</guid>
       <description>Status: This paper has been accepted and will appear in Science Advances. An older preprint is available here.
-Abstract  Dysbiosis in the infant microbiome is linked to impaired cognitive development~. Yet, patient-specific microbiome variations hinder the definition of normal ranges~, making the microbial impact on neurodevelopment unclear. This study introduces a digital twin of the infant microbiome, forecasting ecosystem trajectories from initial observations. Using 16S rRNA profiles from 88 preterm infants (398 fecal samples and 32,942 abundance estimates for 91 microbial classes), the model predicts abundance dynamics with \(R^2=0.</description>
+Abstract  Dysbiosis in the infant microbiome is linked to impaired cognitive development (1). Yet, patient-specific microbiome variations hinder the definition of normal ranges (2), making the microbial impact on neurodevelopment unclear. This study introduces a digital twin of the infant microbiome, forecasting ecosystem trajectories from initial observations. Using 16S rRNA profiles from \(88\) preterm infants (\(398\) fecal samples and \(32,942\) abundance estimates for \(91\) microbial classes), the model predicts abundance dynamics with \(R^2=0.</description>
     </item>
     
     <item>
@@ -52,7 +52,7 @@ Abstract  Recognizing AI generated text by estimating the entropy rate of the sy
       
       <guid>/spectral/</guid>
       <description>Status: Investigating.
-A current project of interest involves developing provably optimal solution guarantees to nonconvex optimization problems under certain regimes. An example problem instance is the well-known \(\mathbb{Z}/2\) quadratic program: \[ \max_{x \in \{-1,1\}^n} x^T A x, \] where \(A \succeq 0\) is typically assumed positive semidefinite. With no domain restriction, the optimal \(x\) is the leading eigenvector of \(A\). By restricting to the Boolean cube, this becomes NP-hard (though it can be approximated using semidefinite programming relaxations and the sum-of-squares/Lasserre hierarchy; see eg.</description>
+Can we develop provably optimal solution guarantees to nonconvex optimization problems under certain regimes? An example problem instance is the well-known \(\mathbb{Z}/2\) quadratic program: \[ \tag{1} \max_{x \in \{-1,1\}^n} x^T A x,\] where \(A \succeq 0\) is typically assumed positive semidefinite. With no domain restriction, the optimal \(x\) is the leading eigenvector of \(A\). By restricting to the Boolean cube, this becomes NP-hard (though it can be approximated using semidefinite programming relaxations and the sum-of-squares/Lasserre hierarchy; see eg.</description>
     </item>
     
     <item>
@@ -113,7 +113,7 @@ VeRITAS: Algorithmic Lie Detection Developed artificial intelligence (AI) framew
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/research/</guid>
-      <description>Projects  Digital twins for analysis of microbiome ecosystems Entropy-rate identification of AI/LLM-generated content Algorithmic detection of lies, malingering, and/or adversarial deception Multi-scale stochastic modeling of Huanglongbing disease in Florida Exact spectral solutions to certain nonconvex optimization problems Computational group theory  Publications  A Digital Twin of the Infant Microbiome to Predict Neurodevelopmental Deficits (with K. Oliphant, R. Zheng, E. Claud, I. Chattopadhyay). Science Advances (2024 - to appear). Partition Numbers of Finite Solvable Groups (with T.</description>
+      <description>Projects  Digital twins for analysis of microbiome ecosystems Entropy-rate identification of AI/LLM-generated content Algorithmic detection of lies, malingering, and/or adversarial deception Multi-scale stochastic modeling of Huanglongbing disease in Florida Exact spectral solutions to certain nonconvex optimization problems Computational group theory (group partitions)  Publications  A Digital Twin of the Infant Microbiome to Predict Neurodevelopmental Deficits (with K. Oliphant, R. Zheng, E. Claud, I. Chattopadhyay). Science Advances (2024 - to appear).</description>
     </item>
     
     <item>
