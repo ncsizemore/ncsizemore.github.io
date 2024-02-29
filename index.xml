@@ -12,7 +12,7 @@
       
       <guid>/deception/</guid>
       <description>Status: Manuscript in preparation.
-Abstract  Exaggerating or faking the symptoms of a mental health disorder can confound structured diagnostic interviews and hinder clinical psychiatric assessments~. We introduce an artificial intelligence (AI) framework for detecting symptom fabrication in mental health assessments, illustrated here for Post-Traumatic Stress Disorder (PTSD) diagnoses, for which malingering is a known problem~, partially ascribable to the potential for secondary financial gain from positive diagnoses. Algorithm employs novel generative AI to infer statistical dependencies inherent in true response patterns, and flags responses which violate these subtle constraints.</description>
+Abstract  Exaggerating or faking the symptoms of a mental health disorder can confound structured diagnostic interviews and hinder clinical psychiatric assessments (1, 2). We introduce an artificial intelligence (AI) framework for detecting symptom fabrication in mental health assessments, illustrated here for Post-Traumatic Stress Disorder (PTSD) diagnoses, for which malingering is a known problem (3, 4), partially ascribable to the potential for secondary financial gain from positive diagnoses.</description>
     </item>
     
     <item>
@@ -42,7 +42,7 @@ Abstract  Dysbiosis in the infant microbiome is linked to impaired cognitive dev
       
       <guid>/ai-text/</guid>
       <description>Status: Manuscript in preparation.
-Abstract  Recognizing AI generated text by estimating the entropy rate of the symbol stream over the 26+1 letter alphabet (English). We hypothesize that human generated content has a higher entropy rate. Shannon’s experimental approach suggested that English has an entropy rate of 1 bit per letter; here we show that AI generated content typically has much less. We call this algorithm NERO: Nonparametric Entropy-Rate Oracle.</description>
+Abstract  Recognizing AI generated text by estimating the entropy rate of the symbol stream over the 26+1 letter alphabet (English). We hypothesize that human generated content has a higher entropy rate. Shannon’s experimental approach (1) suggested that English has an entropy rate of \(1\) bit per letter; here we show that AI generated content typically has much less. We call this algorithm NERO - the Nonparametric Entropy-Rate Oracle.</description>
     </item>
     
     <item>

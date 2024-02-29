@@ -83,12 +83,29 @@
 <div id="abstract" class="section level2">
 <h2>Abstract</h2>
 <blockquote>
-<p>Recognizing AI generated text by estimating the entropy rate of the symbol stream over the 26+1 letter alphabet (English). We hypothesize that human generated content has a higher entropy rate. Shannon’s experimental approach suggested that English has an entropy rate of 1 bit per letter; here we show that AI generated content typically has much less. We call this algorithm NERO: Nonparametric Entropy-Rate Oracle.dafdasf</p>
+<p>Recognizing AI generated text by estimating the entropy rate of the symbol stream over the 26+1 letter alphabet (English). We hypothesize that human generated content has a higher entropy rate. Shannon’s experimental approach <span class="citation">(<a href="#ref-shannon1951prediction" role="doc-biblioref"><em>1</em></a>)</span> suggested that English has an entropy rate of <span class="math inline">\(1\)</span> bit per letter; here we show that AI generated content typically has much less. We call this algorithm <code>NERO</code> - the Nonparametric Entropy-Rate Oracle.</p>
 </blockquote>
+<p>Generative artificial intelligence (AI) through large language models (LLMs), continues to demonstrate remarkable capabilities in generating text that closely mimic human writing styles, and are increasingly becoming invaluable for a wide range of applications, from automated content creation to enhancing natural language processing tasks. Currently, the capabilities of LLMs have improved to the point where determining whether a text is human-generated no longer be trivial. <span class="citation">(<a href="#ref-naturebe2023prepare" role="doc-biblioref"><em>2</em></a>)</span> This apparent indistinguishability of AI vs. human generated content has raised significant concerns regarding the reliability and authenticity of information in the public domain<span class="citation">(<a href="#ref-crothers2023machine" role="doc-biblioref"><em>3</em></a>, <a href="#ref-thirunavukarasu2023large" role="doc-biblioref"><em>4</em></a>)</span>, and where the integrity of the information is critical, such as in academic writing, journalism, and legal documentation.</p>
+<p>We posit that there exists a measurable difference in the inherent complexity and unpredictability of human vs AI generated text. A long-form text, when represented as a symbol stream over a <span class="math inline">\(27\)</span> letter alphabet (<span class="math inline">\(26\)</span> letter + space), may be viewed as a sample path from an underlying stochastic process, and a fundamental measure of the inherent complexity of such a stochastic generator is the entropy rate of the process. Here we demonstrate that our intuition that AI-generated text is recognizably less complex, leads to a practically implementable algorithm, revealing that AI achieves significantly lower entropy rate compared to human content. This insight not only leads to a robust tool for recognizing AI generated long-form text, but emerges as the yard-stick by which to measure the quality of AI content-generation capability as LLMs continue to improve.</p>
 </div>
 <div id="software" class="section level2">
 <h2>Software</h2>
 <p><a href="https://github.com/zeroknowledgediscovery/recogai_"><code>recogai</code></a>: Source files for experiments on detection of AI-generated text using NERO algorithm (currently private)</p>
+<hr />
+<div id="refs" class="references csl-bib-body">
+<div id="ref-shannon1951prediction" class="csl-entry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">C. E. Shannon, Prediction and entropy of printed english. <em>Bell system technical journal</em> <strong>30</strong>, 50–64 (1951).</div>
+</div>
+<div id="ref-naturebe2023prepare" class="csl-entry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline"><a href="https://doi.org/10.1038/s41551-023-01012-6">Prepare for truly useful large language models</a>. <em>Nature Biomedical Engineering</em> <strong>7</strong>, 85–86 (2023).</div>
+</div>
+<div id="ref-crothers2023machine" class="csl-entry">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">E. Crothers, N. Japkowicz, H. L. Viktor, Machine-generated text: A comprehensive survey of threat models and detection methods. <em>IEEE Access</em> (2023).</div>
+</div>
+<div id="ref-thirunavukarasu2023large" class="csl-entry">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">A. J. Thirunavukarasu, D. S. J. Ting, K. Elangovan, L. Gutierrez, T. F. Tan, D. S. W. Ting, Large language models in medicine. <em>Nature medicine</em> <strong>29</strong>, 1930–1940 (2023).</div>
+</div>
+</div>
 </div>
 
 </div>
