@@ -22,6 +22,9 @@ interface ProjectText {
   text: string;
 }
 
+// Type the projectsData
+const projects: { [key: string]: Project } = projectsData;
+
 export function ResearchProjects() {
   const [expandedProjects, setExpandedProjects] = useState<{ [key: string]: boolean }>({});
 
@@ -33,20 +36,15 @@ export function ResearchProjects() {
   };
 
   const formatCitations = (text: string): string => {
-    // Convert @citation to [citation]
     return text.replace(/@(\w+)/g, '[$1]');
   };
 
   const formatFootnotes = (text: string): string => {
-    // Convert [^note] to (note)
     return text.replace(/\[\^(\w+)\]/g, '($1)');
   };
 
   const extractProjectContent = (rawContent: string): ProjectText => {
-    // Remove YAML frontmatter if present
     const contentWithoutFrontmatter = rawContent.replace(/^---\n[\s\S]*?\n---\n/, '');
-
-    // Extract content between Abstract header and next section
     const abstractMatch = contentWithoutFrontmatter.match(/## Abstract\n>\s*([\s\S]*?)(?=\n##|$)/);
 
     if (abstractMatch && abstractMatch[1]) {
@@ -57,7 +55,6 @@ export function ResearchProjects() {
       };
     }
 
-    // If no abstract found, return all content after status
     const contentMatch = contentWithoutFrontmatter.match(/\*\*Status:\*\*.*?\n\n([\s\S]*)/);
     const content = contentMatch ? contentMatch[1].trim() : 'No content available.';
     return {
@@ -73,20 +70,13 @@ export function ResearchProjects() {
   };
 
   const cleanPreviewText = (text: string): string => {
-    // Remove markdown headers
     let cleaned = text.replace(/#{1,6}\s+/g, '');
-    // Remove markdown links
     cleaned = cleaned.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
-    // Remove markdown emphasis/bold
     cleaned = cleaned.replace(/(\*\*|__)(.*?)\1/g, '$2');
     cleaned = cleaned.replace(/(\*|_)(.*?)\1/g, '$2');
-    // Remove LaTeX expressions
     cleaned = cleaned.replace(/\$[^$]+\$/g, '');
-    // Remove blockquotes
     cleaned = cleaned.replace(/^>\s*/gm, '');
-    // Remove extra whitespace
     cleaned = cleaned.replace(/\s+/g, ' ').trim();
-
     return cleaned;
   };
 
@@ -94,7 +84,7 @@ export function ResearchProjects() {
     <section>
       <h2 className="text-2xl font-bold mb-6">Research</h2>
       <div className="space-y-6">
-        {Object.entries(projectsData).map(([slug, project]) => {
+        {Object.entries(projects).map(([slug, project]) => {
           const projectContent = extractProjectContent(project.rawContent);
           const softwareLink = parseSoftwareLink(project.softwareLink);
           const previewText = cleanPreviewText(projectContent.text);
@@ -125,7 +115,7 @@ export function ResearchProjects() {
                   <div className="mb-3 text-sm">
                     <ReactMarkdown
                       components={{
-                        strong: ({ node, ...props }) => <span className="font-semibold" {...props} />
+                        strong: ({ ...props }) => <span className="font-semibold" {...props} />
                       }}
                     >
                       {`**Status:** ${project.status}`}
@@ -137,13 +127,13 @@ export function ResearchProjects() {
                       remarkPlugins={[remarkMath]}
                       rehypePlugins={[rehypeKatex]}
                       components={{
-                        h1: ({ node, ...props }) => <h1 className="text-base font-bold mt-6 mb-2" {...props} />,
-                        h2: ({ node, ...props }) => <h2 className="text-base font-bold mt-4 mb-2" {...props} />,
-                        h3: ({ node, ...props }) => <h3 className="text-sm font-bold mt-3 mb-1" {...props} />,
-                        p: ({ node, ...props }) => <p className="text-sm leading-relaxed my-2" {...props} />,
-                        ul: ({ node, ...props }) => <ul className="text-sm my-2 space-y-1 list-disc pl-4" {...props} />,
-                        li: ({ node, ...props }) => <li className="text-sm leading-relaxed" {...props} />,
-                        a: ({ node, ...props }) => (
+                        h1: ({ ...props }) => <h1 className="text-base font-bold mt-6 mb-2" {...props} />,
+                        h2: ({ ...props }) => <h2 className="text-base font-bold mt-4 mb-2" {...props} />,
+                        h3: ({ ...props }) => <h3 className="text-sm font-bold mt-3 mb-1" {...props} />,
+                        p: ({ ...props }) => <p className="text-sm leading-relaxed my-2" {...props} />,
+                        ul: ({ ...props }) => <ul className="text-sm my-2 space-y-1 list-disc pl-4" {...props} />,
+                        li: ({ ...props }) => <li className="text-sm leading-relaxed" {...props} />,
+                        a: ({ ...props }) => (
                           <a
                             className="text-blue-600 hover:text-blue-800 hover:underline"
                             target="_blank"

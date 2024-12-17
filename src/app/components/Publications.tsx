@@ -16,6 +16,7 @@ interface Publication {
 
 export function Publications() {
     const [expandedBibtex, setExpandedBibtex] = useState<number | null>(null);
+    const papers: Publication[] = publicationsData.papers;
 
     const toggleBibtex = (index: number) => {
         setExpandedBibtex(expandedBibtex === index ? null : index);
@@ -25,7 +26,7 @@ export function Publications() {
         <section>
             <h2 className="text-2xl font-bold mb-6">Publications</h2>
             <div className="space-y-8">
-                {publicationsData.papers.map((pub, index) => (
+                {papers.map((pub, index) => (
                     <article key={index} className="space-y-2">
                         <h3 className="text-base font-bold leading-snug">
                             {pub.title}
