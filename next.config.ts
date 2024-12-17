@@ -3,9 +3,8 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
-  },
-  // If not deploying to root domain
-  basePath: process.env.NODE_ENV === 'production' ? '/new-academic-site' : '',
+  }
+  // Remove basePath and assetPrefix since this will be the root site
 }
 
 module.exports = nextConfig
