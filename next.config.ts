@@ -1,5 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
@@ -7,4 +8,4 @@ const nextConfig = {
   // Remove basePath and assetPrefix since this will be the root site
 }
 
-module.exports = nextConfig
+export default nextConfig
