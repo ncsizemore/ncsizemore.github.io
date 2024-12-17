@@ -1,0 +1,48 @@
+{
+    "thesis": {
+        "include": false,
+        "data": {
+            "title": "Group covers and partitions: covering and partition numbers",
+            "authors": [
+                "Sizemore, Nicholas"
+            ],
+            "type": "thesis",
+            "school": "Western Carolina University",
+            "year": 2013,
+            "bibtex": "@book{sizemore2013group,\n  title={Group covers and partitions: covering and partition numbers},\n  author={Sizemore, Nicholas},\n  year={2013},\n  publisher={Western Carolina University}\n}"
+        }
+    },
+    "papers": [
+        {
+            "title": "A digital twin of the infant microbiome to predict neurodevelopmental deficits",
+            "authors": [
+                "Sizemore, Nicholas",
+                "Oliphant, Kaitlyn",
+                "Zheng, Ruolin",
+                "Martin, Camilia R",
+                "Claud, Erika C",
+                "Chattopadhyay, Ishanu"
+            ],
+            "journal": "Science Advances",
+            "volume": "10",
+            "number": "15",
+            "pages": "eadj0400",
+            "year": 2024,
+            "doi": "https://doi.org/10.1126/sciadv.adj0400",
+            "bibtex": "@article{sizemore2024digital,\n  title={A digital twin of the infant microbiome to predict neurodevelopmental deficits},\n  author={Sizemore, Nicholas and Oliphant, Kaitlyn and Zheng, Ruolin and Martin, Camilia R and Claud, Erika C and Chattopadhyay, Ishanu},\n  journal={Science Advances},\n  volume={10},\n  number={15},\n  pages={eadj0400},\n  year={2024},\n  publisher={American Association for the Advancement of Science}\n}"
+        },
+        {
+            "title": "Partition numbers of finite solvable groups",
+            "authors": [
+                "Foguel, Tuval",
+                "Sizemore, Nick"
+            ],
+            "journal": "Advances in group theory and applications",
+            "volume": "6",
+            "pages": "55-67",
+            "year": 2018,
+            "doi": "https://doi.org/10.32037/agta-2018-004",
+            "bibtex": "@article{foguel2018partition,\n  title={Partition numbers of finite solvable groups},\n  author={Foguel, Tuval and Sizemore, Nick},\n  journal={Advances in group theory and applications an open access journal},\n  volume={6},\n  pages={55--67},\n  year={2018}\n}"
+        }
+    ]
+}
