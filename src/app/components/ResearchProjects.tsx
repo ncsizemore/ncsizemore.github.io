@@ -22,11 +22,45 @@ interface ProjectText {
   text: string;
 }
 
-// Type the projectsData
+const projectOrder = [
+  'microbiome',
+  'hlb-model',
+  'ai-text',
+  'deception',
+  'spectral',
+  'group-partitions'
+];
+
 const projects: { [key: string]: Project } = projectsData;
 
 export function ResearchProjects() {
   const [expandedProjects, setExpandedProjects] = useState<{ [key: string]: boolean }>({});
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+
+  // Development logging
+  if (process.env.NODE_ENV === 'development') {
+    // Log any projects in the order that aren't in the data
+    const missingProjects = projectOrder.filter(slug => !projects[slug]);
+    if (missingProjects.length > 0) {
+      console.warn('⚠️ Missing projects:', missingProjects);
+    }
+
+    // Log any projects in the data that aren't in the order
+    const extraProjects = Object.keys(projects).filter(slug => !projectOrder.includes(slug));
+    if (extraProjects.length > 0) {
+      console.info('ℹ️ Projects not in order:', extraProjects);
+    }
+
+    // Log the final order being used
+    console.info('📋 Projects being displayed:',
+      projectOrder
+        .filter(slug => projects[slug])
+        .map(slug => ({
+          slug,
+          title: projects[slug].title
+        }))
+    );
+  }
 
   const toggleProject = (slug: string) => {
     setExpandedProjects(prev => ({
@@ -80,11 +114,22 @@ export function ResearchProjects() {
     return cleaned;
   };
 
+  // Create ordered projects array
+  const orderedProjects = projectOrder
+    .map(slug => {
+      const project = projects[slug];
+      if (!project && process.env.NODE_ENV === 'development') {
+        console.warn(`⚠️ Project "${slug}" specified in order but not found in data`);
+      }
+      return [slug, project];
+    })
+    .filter(([, project]) => project) as [string, Project][];
+
   return (
     <section>
       <h2 className="text-2xl font-bold mb-6">Research</h2>
       <div className="space-y-6">
-        {Object.entries(projects).map(([slug, project]) => {
+        {orderedProjects.map(([slug, project]) => {
           const projectContent = extractProjectContent(project.rawContent);
           const softwareLink = parseSoftwareLink(project.softwareLink);
           const previewText = cleanPreviewText(projectContent.text);
@@ -135,7 +180,7 @@ export function ResearchProjects() {
                         li: ({ ...props }) => <li className="text-sm leading-relaxed" {...props} />,
                         a: ({ ...props }) => (
                           <a
-                            className="text-blue-600 hover:text-blue-800 hover:underline"
+                            className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
                             target="_blank"
                             rel="noopener noreferrer"
                             {...props}
@@ -151,7 +196,13 @@ export function ResearchProjects() {
                     <div className="pt-3 border-t border-gray-100">
                       <a
                         href={softwareLink.url}
-                        className="inline-block font-mono text-sm p-1.5 hover:bg-gray-50 border border-gray-100 rounded-sm"
+                        onMouseEnter={() => setHoveredLink(`${slug}-software`)}
+                        onMouseLeave={() => setHoveredLink(null)}
+                        className={`inline-block font-mono text-sm p-1.5 border border-gray-100 rounded-sm transition-all duration-200
+                          ${hoveredLink === `${slug}-software`
+                            ? 'bg-gray-50 text-gray-900 scale-[1.01]'
+                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'
+                          }`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >

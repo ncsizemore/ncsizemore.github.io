@@ -16,6 +16,7 @@ interface Publication {
 
 export function Publications() {
     const [expandedBibtex, setExpandedBibtex] = useState<number | null>(null);
+    const [hoveredLink, setHoveredLink] = useState<string | null>(null);
     const papers: Publication[] = publicationsData.papers;
 
     const toggleBibtex = (index: number) => {
@@ -48,7 +49,13 @@ export function Publications() {
                             {pub.doi && (
                                 <a
                                     href={pub.doi}
-                                    className="inline-block p-1.5 hover:bg-gray-50 border border-gray-100 rounded-sm"
+                                    onMouseEnter={() => setHoveredLink(`doi-${index}`)}
+                                    onMouseLeave={() => setHoveredLink(null)}
+                                    className={`inline-block p-1.5 border border-gray-100 rounded-sm transition-all duration-200
+                                        ${hoveredLink === `doi-${index}`
+                                            ? 'bg-gray-50 text-gray-900 scale-[1.01]'
+                                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'
+                                        }`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -58,7 +65,13 @@ export function Publications() {
                             {pub.bibtex && (
                                 <button
                                     onClick={() => toggleBibtex(index)}
-                                    className="inline-block p-1.5 hover:bg-gray-50 border border-gray-100 rounded-sm font-mono"
+                                    onMouseEnter={() => setHoveredLink(`bibtex-${index}`)}
+                                    onMouseLeave={() => setHoveredLink(null)}
+                                    className={`inline-block p-1.5 border border-gray-100 rounded-sm font-mono transition-all duration-200
+                                        ${hoveredLink === `bibtex-${index}`
+                                            ? 'bg-gray-50 text-gray-900 scale-[1.01]'
+                                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'
+                                        }`}
                                 >
                                     [BibTeX]
                                 </button>
