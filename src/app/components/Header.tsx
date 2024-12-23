@@ -10,7 +10,7 @@ interface HeaderLink {
 const headerLinks: HeaderLink[] = [
     {
         text: 'Email',
-        href: 'mailto:nicholas.sizemore@example.com'
+        href: 'mailto:ncsizemore@outlook.com'
     },
     {
         text: 'GitHub',
