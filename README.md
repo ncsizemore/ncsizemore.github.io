@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nicholas Sizemore - Academic Website
 
-## Getting Started
+Personal academic website built with Next.js, focusing on research projects in computational biology and network science.
 
-First, run the development server:
+## Local Development
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site will be available at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+├── components/         # React components
+│   ├── Header.tsx     # Site header with navigation
+│   ├── Publications.tsx
+│   ├── ResearchProjects.tsx
+│   └── Teaching.tsx
+├── content/           # JSON data files
+│   ├── publications.json
+│   └── research-projects.json
+├── page.tsx           # Main page component
+└── layout.tsx         # Root layout
 
-## Learn More
+public/               # Static assets
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Content Management
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Research projects and publications are managed through JSON files in the `content` directory:
+- `research-projects.json`: Individual research project details
+- `publications.json`: Academic publications data
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Development Notes
 
-## Deploy on Vercel
+- Built with Next.js 14 and TypeScript
+- Styled using Tailwind CSS
+- Mathematics rendered using KaTeX
+- Markdown content processed with ReactMarkdown
+- Development logging available for content debugging
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The site is deployed to GitHub Pages using GitHub Actions. The deployment workflow automatically builds and deploys changes pushed to the main branch.
+
+## Original Template
+
+This project was bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). For more information about Next.js features, see their [documentation](https://nextjs.org/docs).
