@@ -1,6 +1,4 @@
-# Nicholas Sizemore - Academic Website
-
-Personal academic website built with Next.js, focusing on research projects in computational biology and network science.
+Personal academic website built with Next.js, focusing on research projects in computational/mathematical modeling of complex systems.
 
 ## Local Development
 
