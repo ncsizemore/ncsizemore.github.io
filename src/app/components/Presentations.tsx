@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import type { Presentation } from '../types';
+import type { Presentation } from '../../types';
 
 // Temporary data directly in component while we test
 const presentationsData = {
