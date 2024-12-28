@@ -1,3 +1,5 @@
+# Personal Academic Website
+
 Personal academic website built with Next.js, focusing on research projects in computational/mathematical modeling of complex systems.
 
 ## Local Development
@@ -13,26 +15,36 @@ The site will be available at [http://localhost:3000](http://localhost:3000).
 ## Project Structure
 
 ```
-app/
-├── components/         # React components
-│   ├── Header.tsx     # Site header with navigation
-│   ├── Publications.tsx
-│   ├── ResearchProjects.tsx
-│   └── Teaching.tsx
-├── content/           # JSON data files
-│   ├── publications.json
-│   └── research-projects.json
-├── page.tsx           # Main page component
-└── layout.tsx         # Root layout
+src/
+├── types.ts           # TypeScript type definitions
+└── app/
+    ├── components/    # React components
+    │   ├── Header.tsx
+    │   ├── Presentations.tsx
+    │   ├── Publications.tsx
+    │   ├── ResearchProjects.tsx
+    │   └── Teaching.tsx
+    ├── content/       # JSON data files
+    │   ├── publications.json
+    │   └── research-projects.json
+    ├── page.tsx       # Main page component
+    └── layout.tsx     # Root layout
 
 public/               # Static assets
+└── presentations/   # Presentation files
+    └── hlb/        # HLB presentation
+        ├── css/
+        ├── libs/
+        └── figures/
 ```
 
 ## Content Management
 
-Research projects and publications are managed through JSON files in the `content` directory:
+Content is managed through several sources:
 - `research-projects.json`: Individual research project details
 - `publications.json`: Academic publications data
+- `presentations/`: HTML presentations and their assets
+- Types defined in `types.ts`
 
 ## Development Notes
 
@@ -40,6 +52,7 @@ Research projects and publications are managed through JSON files in the `conten
 - Styled using Tailwind CSS
 - Mathematics rendered using KaTeX
 - Markdown content processed with ReactMarkdown
+- HTML presentations supported with custom styling
 - Development logging available for content debugging
 
 ## Deployment
