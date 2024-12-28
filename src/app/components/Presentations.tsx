@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import type { Presentation } from '../../types';
 
-// Temporary data directly in component while we test
-const presentationsData = {
+// Remove the 'as const' and just type the data directly
+const presentationsData: { items: Presentation[] } = {
     items: [
         {
             title: "HLB Model: Disease Spread and Control Strategies",
@@ -18,7 +18,7 @@ const presentationsData = {
             url: "/presentations/qb_embed/qb_embed.html"
         }
     ]
-} as const;
+};
 
 export function Presentations() {
     const [hoveredLink, setHoveredLink] = useState<string | null>(null);
