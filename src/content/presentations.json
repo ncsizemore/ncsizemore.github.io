@@ -1,0 +1,15 @@
+{
+    "items": [
+        {
+            "title": "HLB Model: Disease Spread and Control Strategies",
+            "type": "talk",
+            "url": "/presentations/hlb/hlb.html",
+            "relatedProject": "hlb-model"
+        },
+        {
+            "title": "Quantum-inspired Biological Embeddings",
+            "type": "slides",
+            "url": "/presentations/qb_embed/qb_embed.html"
+        }
+    ]
+}

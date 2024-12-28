@@ -1,0 +1,319 @@
+---
+title: "`Qbiome`"
+subtitle: "Reverse-engineering the Infant Microbiome To Predict Severe Neurodevelopmental Deficits"
+#author: 
+date: "Last modified: `r Sys.Date()`"
+output:
+  revealjs::revealjs_presentation:
+#    theme: serif
+    css: [style/my_style.css, style/sunblind.css]
+    highlight: pygments
+    center: true
+    includes:
+      in_header: [font.html, lines.html]
+    reveal_options:
+      margin: 0.2
+---
+
+
+
+<p class="stretch"><img src="img/abstract.png" style="display:block; margin:auto"></p>
+<!--- 
+## {data-background-image="img/abstract.png" data-background-size="contain"}
+# {data-background="https://images.pexels.com/photos/949587/pexels-photo-949587.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"}
+
+<h1 style="color: #fff">Caitlin's presentaytion</h1>
+
+--->
+
+# Patient characteristics (UC MIND cohort)
+
+**AHCG**: appropriate head circumference growth
+
+**SHCG**: suboptimal head circumference growth
+
+|                                     | AHCG ($n = 28$)     | SHCG ($n = 30$)   |
+|-------------------------------------|-------------------|-----------------|
+| Age (EGA weeks), mean $\pm$ SD         | 28.32 $\pm$ 2.60     | 26.9 $\pm$ 2.64    |
+| Male, no. (\%)                      | 13 (46.43)        | 15 (50)         |
+| BW, g, mean $\pm$ SD                   | 1021.96 $\pm$ 382.91 | 998.3 $\pm$ 423.45 |
+| BHC, cm, mean $\pm$ SD                 | 24.875 $\pm$ 2.88    | 24.57 $\pm$ 3.26   |
+| Vaginal delivery, no. (\%)          | 12 (42.86)        | 4 (13.33)       |
+| Length of stay, days, mean $\pm$ SD    | 77.89 $\pm$ 34.77    | 103.27 $\pm$ 61.21 |
+| PMA at discharge, weeks, mean $\pm$ SD | 39.04 $\pm$ 3.80     | 41.13 $\pm$ 6.80   |
+
+# The `Q-net`: A Linked Collection of Predictors
+
+Goal: an ecosystem model expressive enough to learn nontrivial dynamics yet capable of generating actionable clinical insights
+
+Direct modeling of the ecosystem is difficult due to limited understanding of microbial dynamics; standard/predictive machine learning methods are less interpretable and require more data than we have
+
+## The `Q-net`: A Linked Collection of Predictors
+
+<style>
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 4fr;
+  grid-gap: 3%;
+}
+.col{
+  align-self: center;
+}
+</style>
+
+::: {.container}
+:::: {.col}
+Node
+::::
+:::: {.col}
+$\iff$
+::::
+:::: {.col}
+Biome entity
+::::
+:::: {.col}
+$\iff$
+::::
+:::: {.col}
+Decision tree predictor of entity's abundance
+::::
+:::
+
+<p class="stretch"><img src="img/qnet.png" style="display:block; margin:auto"></p>
+
+##
+
+::: {.container}
+:::: {.col}
+Node
+::::
+:::: {.col}
+$\iff$
+::::
+:::: {.col}
+Biome entity
+::::
+:::: {.col}
+$\iff$
+::::
+:::: {.col}
+Decision tree predictor of entity's abundance
+::::
+:::
+
+<p class="stretch"><img src="img/linked_trees.PNG" style="display:block; margin:auto"></p>
+
+# Forecasting evolutionary trajectories
+
+We can sample (`q-sample`) the predictors to **reconstruct** or **forecast** biome trajectories
+
+<style>
+.container2{
+  display: grid;
+  grid-template-columns: 3fr 1fr 2fr 1fr 3fr;
+  grid-gap: 3%;
+}
+.col{
+  align-self: center;
+}
+</style>
+
+::: {.container2}
+:::: {.col}
+Realistic initial conditions (biome abundances measured over several weeks)
+::::
+:::: {.col}
+$\implies$
+::::
+:::: {.col}
+Sample the `Q-net` 
+::::
+:::: {.col}
+$\implies$
+::::
+:::: {.col}
+Recover patterns in the ecosystem (even from small cohort sizes)
+::::
+:::
+
+## UChicago cohort
+
+<p class="stretch"><img src="img/forecasts_UC.png" style="display:block; margin:auto">
+</p>
+ 
+## Boston cohort
+
+<p class="stretch"><img src="img/forecasts_Boston.png" style="display:block; margin:auto">
+</p>
+
+<!--- 
+##
+
+<p class="stretch"><img src="img/forecasts1.png" style="display:block; margin:auto"><br/>
+<img src="img/leg.png" style="display:block; margin:auto; width:50%">
+</p>
+
+##
+
+<p class="stretch"><img src="img/forecasts2.png" style="display:block; margin:auto"><br/>
+<img src="img/leg.png" style="display:block; margin:auto; width:50%">
+</p>
+
+##
+
+<p class="stretch"><img src="img/forecasts3.png" style="display:block; margin:auto"><br/>
+<img src="img/leg.png" style="display:block; margin:auto; width:50%">
+</p>
+
+##
+
+<p class="stretch"><img src="img/forecasts4.png" style="display:block; margin:auto"><br/>
+<img src="img/leg.png" style="display:block; margin:auto; width:50%">
+</p>
+-->
+
+# Forecasting of Distinct Clinical Cohorts
+
+Using distinct `Q-net`s allows us to forecast **differences** between **phenotypes**
+
+<p class="stretch"><img src="img/forecasts_sep1.png" style="display:block; margin:auto"><br/>
+<img src="img/leg_sep.png" style="display:block; margin:auto; width:50%">
+</p>
+
+##
+
+<p class="stretch"><img src="img/forecasts_sep2.png" style="display:block; margin:auto"><br/>
+<img src="img/leg_sep.png" style="display:block; margin:auto; width:50%">
+</p>
+
+##
+
+<p class="stretch"><img src="img/forecasts_sep3.png" style="display:block; margin:auto"><br/>
+<img src="img/leg_sep.png" style="display:block; margin:auto; width:50%">
+</p>
+
+##
+
+<p class="stretch"><img src="img/forecasts_sep4.png" style="display:block; margin:auto"><br/>
+<img src="img/leg_sep.png" style="display:block; margin:auto; width:50%">
+</p>
+
+
+
+# Clinical Risk Assessment
+
+The `Q-net` induces a novel risk measure that can **highlight differences** in phenotypes
+
+<!--- 
+For a microbiome profile $x$: 
+$$\operatorname{Risk}(x) = \frac{\theta(x_S,0)}{\theta(x_A,0)} \ \left\rbrace \ \ \frac{\text{distance from 0 (assuming } x \text{ suboptimal)}}{\text{distance from 0 (assuming } x \text{ appropriate)}} \right.$$
+--->
+
+## Risk differences between cohorts
+
+<style>
+.container3{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3%;
+}
+.col{
+  align-self: center;
+}
+</style>
+
+::: {.container3}
+:::: {.col}
+<p><img src="img/risk_distr.png"></p>
+<p style="text-align:center">*Distribution of risk*</p>
+::::
+:::: {.col}
+<p><img src="img/risk_weekly.png" ></p>
+<p style="text-align:center">*Risk computed weekly*</p>
+::::
+:::
+
+
+# Identifying a "Healthy Microbiome"
+
+**Goal**: Want  mapping of "microbiome profile" space, separated into <span style="color:blue">healthy</span> and <span style="color:red">unhealthy</span> regions
+
+**Challenges**: 
+
+1. **(Definition)**: How to define `healthy`?
+2. **(Validity)**: How to identify valid microbiome profiles?
+
+## 
+
+<style>
+.reveal .slide-footer {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    text-align: center;
+    font-size: 65%;
+}
+
+</style>
+
+**Claim**: `q-sampled` microbiome profiles are more biologically likely/valid than random samples<sup><span style="font-size: 65%">1</span></sup>
+
+$\implies$ `q-samples` help address the validity problem
+\
+\
+\
+\
+\
+
+<hr>
+:::: {.slide-footer}
+[1] The `Q-net` predictors are nonparametric estimates of the full conditional distributions $f(X_i \,|\, X_j, j\neq i)$ of each entity $X_i$
+
+<!--- 
+[2] `Q-net`s induce a pseudo-metric `q-distance`, which bounds deviations of the log-likelihood of transition between microbiome profiles
+--->
+::::
+
+## `q-samples` capture non-uniform structure in the space of microbiome profiles
+
+
+<p class="stretch"><img src="img/qsamples_risk.png" style="display:block; margin:auto"></p>
+
+## Spatial distribution of *biologically likely/valid* microbiome profiles
+
+<p class="stretch"><img src="img/distr.png" style="display:block; margin:auto"></p>
+
+## High- and Low-Risk regions of *biologically likely/valid* profiles
+
+::: {.container3}
+:::: {.col}
+<p><img src="img/high.png"></p>
+<p style="text-align:center">*High risk*</p>
+::::
+:::: {.col}
+<p><img src="img/low.png" ></p>
+<p style="text-align:center">*Low risk*</p>
+::::
+:::
+
+## `q-samples` from high- and low-risk regions
+
+<p class="stretch"><img src="img/embed_diffs_1.png" style="display:block; margin:auto">
+</p>
+
+##
+
+<p class="stretch"><img src="img/embed_diffs_2.png" style="display:block; margin:auto">
+</p>
+
+##
+
+<p class="stretch"><img src="img/embed_diffs_3.png" style="display:block; margin:auto">
+</p>
+
+##
+
+<p class="stretch"><img src="img/embed_diffs_4.png" style="display:block; margin:auto">
+</p>

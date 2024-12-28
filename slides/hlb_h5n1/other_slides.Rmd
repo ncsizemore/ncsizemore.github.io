@@ -1,0 +1,82 @@
+---
+  # Sampling Roads
+  
+  Example of sampling roads along truck routes:
+  
+  ```{r plot-sample, echo=FALSE}
+leaflet::leaflet(st_transform(sample, crs = 4326) %>% st_cast("POINT") %>% as("Spatial")) %>% leaflet.mapboxgl::addMapboxGL(style = "mapbox://styles/mapbox/outdoors-v11", accessToken = "pk.eyJ1IjoibmNzaXplbW9yZSIsImEiOiJjazVweGhua3UwYWg2M2Ryem1iazllMzQzIn0.UnEMbbyS2sg-ygD8saJqQQ", setView = FALSE) %>%  leaflet::addCircleMarkers(weight = 1, fillOpacity = 0, radius = 3) %>% leaflet::setView(-81, 27, zoom = 8)
+```
+
+
+---
+  # Dispersal
+  
+  Example of early dispersal:
+  
+  ```{r plot-uninfected, echo=FALSE}
+mapdeck(zoom = 7, location = osmdata::getbb("ft. lauderdale, fl"), pitch = 45, bearing = 40) %>%
+  add_polygon(data = uninfected, elevation = "lyr.1", elevation_scale = 0.001, fill_colour = "lyr.1",
+              fill_opacity = 120, update_view = FALSE, tooltip = "lab", 
+              palette = "green2red", legend = TRUE, light_settings = light)
+```
+
+
+---
+
+# Output (1)
+
+```{r plot-uninfected, echo=TRUE}
+mapdeck(zoom = 7, location = osmdata::getbb("ft. lauderdale, fl"), pitch = 45, bearing = 40) %>%
+  add_polygon(data = uninf_sf, elevation = "lyr.1", elevation_scale = 0.001, fill_colour = "lyr.1",
+              fill_opacity = 120, update_view = FALSE, tooltip = "lab", 
+              palette = "green2red", legend = TRUE, light_settings = light)
+```
+
+---
+# Output (2)
+
+```{r plot-uninfected2, echo=TRUE}
+r <- rasts[[5]]
+
+uninf <- r[[1]]
+inf <- r[[2]]
+
+uninf_st <- st_as_stars(raster(uninf))
+uninf_sf <- st_as_sf(uninf_st, as_points = FALSE, merge = TRUE) %>% st_transform(crs = 4326)
+
+inf_st <- st_as_stars(raster(inf))
+inf_sf <- st_as_sf(inf_st, as_points = FALSE, merge = TRUE) %>% st_transform(crs = 4326)
+
+mapdeck(zoom = 7, location = osmdata::getbb("ft. lauderdale, fl"), pitch = 45, bearing = 40) %>%
+  add_polygon(data = uninf_sf, elevation = "lyr.1", elevation_scale = 0.001, fill_colour = "lyr.1",
+              fill_opacity = 120, update_view = FALSE, tooltip = "lab", 
+              palette = "green2red", legend = TRUE, light_settings = light)
+```
+
+
+
+---
+
+# Output (3)
+
+```{r plot-uninfected3, echo=TRUE}
+r <- rasts[[10]]
+
+uninf <- r[[1]]
+inf <- r[[2]]
+
+uninf_st <- st_as_stars(raster(uninf))
+uninf_sf <- st_as_sf(uninf_st, as_points = FALSE, merge = TRUE) %>% st_transform(crs = 4326)
+
+inf_st <- st_as_stars(raster(inf))
+inf_sf <- st_as_sf(inf_st, as_points = FALSE, merge = TRUE) %>% st_transform(crs = 4326)
+
+mapdeck(zoom = 7, location = osmdata::getbb("ft. lauderdale, fl"), pitch = 45, bearing = 40) %>%
+  add_polygon(data = uninf_sf, elevation = "lyr.1", elevation_scale = 0.001, fill_colour = "lyr.1",
+              fill_opacity = 120, update_view = FALSE, tooltip = "lab", 
+              palette = "green2red", legend = TRUE, light_settings = light)
+```
+
+
+
+---
