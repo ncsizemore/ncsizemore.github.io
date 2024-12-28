@@ -5,6 +5,7 @@ import { Publications } from './components/Publications';
 import { Contact } from './components/Contact';
 import { Header } from './components/Header';
 import { Teaching } from './components/Teaching';
+import { Presentations } from './components/Presentations';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
           <main className="mt-10 space-y-10">
             <ResearchProjects />
             <Teaching />
+            <Presentations />
             <Publications />
             <Contact />
           </main>
