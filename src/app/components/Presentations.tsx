@@ -1,21 +1,27 @@
 'use client';
 
 import { useState } from 'react';
-import type { Presentation } from '../../types';
+import type { Presentation } from '@/types';
 
-// Remove the 'as const' and just type the data directly
+// Add map of slugs to friendly titles
+const projectTitles: Record<string, string> = {
+    "hlb-model": "Stochastic Model of HLB Disease Spread",
+    "microbiome": "Quantified Microbiome Analysis"
+};
+
 const presentationsData: { items: Presentation[] } = {
     items: [
         {
-            title: "HLB Model: Disease Spread and Control Strategies",
-            type: "talk",
-            url: "/presentations/hlb/hlb.html",
+            title: "A Multiscale Stochastic Model of Statewide HLB Spread in Florida",
+            type: "slides",
+            url: "/presentations/hlb-spread-model/index.html",
             relatedProject: "hlb-model"
         },
         {
-            title: "Quantum-inspired Biological Embeddings",
+            title: "Qbiome: Reverse-engineering the Infant Microbiome To Predict Severe Neurodevelopmental Deficits",
             type: "slides",
-            url: "/presentations/qb_embed/qb_embed.html"
+            url: "/presentations/microbiome-embedding/index.html",
+            relatedProject: "microbiome"
         }
     ]
 };
@@ -37,10 +43,11 @@ export function Presentations() {
                             </div>
                             {presentation.relatedProject && (
                                 <div className="text-sm text-gray-600">
-                                    Related: {presentation.relatedProject}
+                                    Related: {projectTitles[presentation.relatedProject]}
                                 </div>
                             )}
                         </div>
+
                         <a
                             href={presentation.url}
                             target="_blank"
@@ -53,8 +60,9 @@ export function Presentations() {
                                     : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'
                                 }`}
                         >
-                            [{presentation.type}]
+                            [slides]
                         </a>
+
                     </div>
                 ))}
             </div>

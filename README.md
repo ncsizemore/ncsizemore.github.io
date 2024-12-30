@@ -31,11 +31,15 @@ src/
     └── layout.tsx     # Root layout
 
 public/               # Static assets
+└── public/               # Static assets
 └── presentations/   # Presentation files
-    └── hlb/        # HLB presentation
-        ├── css/
-        ├── libs/
-        └── figures/
+    ├── hlb-spread-model/     # HLB spread modeling presentation
+    │   ├── css/
+    │   ├── libs/
+    │   └── figures/
+    └── microbiome-embedding/ # Microbiome analysis presentation
+        ├── style/
+        └── img/
 ```
 
 ## Content Management
