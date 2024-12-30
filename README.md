@@ -30,8 +30,7 @@ src/
     ├── page.tsx       # Main page component
     └── layout.tsx     # Root layout
 
-public/               # Static assets
-└── public/               # Static assets
+public/               # Static assets          # Static assets
 └── presentations/   # Presentation files
     ├── hlb-spread-model/     # HLB spread modeling presentation
     │   ├── css/
