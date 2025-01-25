@@ -10,13 +10,24 @@ const config: Config = {
     extend: {
       fontFamily: {
         serif: ['Georgia', 'ui-serif', 'serif'],
+        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
         mono: ['ui-monospace', 'monospace']
       },
       maxWidth: {
         '2xl': '42rem'
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '42rem',
+            color: '#1a1a1a',
+            lineHeight: '1.75'
+          }
+        }
       }
     },
   },
   plugins: [],
 };
+
 export default config;
