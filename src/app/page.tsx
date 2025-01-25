@@ -9,7 +9,7 @@ import { Presentations } from './components/Presentations';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen">
       <div className="max-w-3xl mx-auto px-8 py-16">
         <div className="bg-[#fdfbf7] rounded-2xl shadow-sm border border-gray-100/50 p-10">
           <Header />

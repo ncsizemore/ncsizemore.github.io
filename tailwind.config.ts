@@ -24,6 +24,10 @@ const config: Config = {
             lineHeight: '1.75'
           }
         }
+      },
+      letterSpacing: {
+        'tight': '-0.015em',
+        'wide': '0.02em'
       }
     },
   },

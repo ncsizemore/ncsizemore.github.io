@@ -48,4 +48,32 @@
   .prose a {
     @apply text-blue-600 hover:text-blue-800 border-b border-blue-200 hover:border-blue-600;
   }
+
+  .hero-pattern {
+    background-image: radial-gradient(circle at 1.5px 1.5px, rgb(203 213 225 / 0.6) 1.5px, transparent 0);
+    background-size: 26px 26px;
+    background-color: rgb(241 245 249);
+  }
+
+  .section-pattern {
+    background-image:
+      linear-gradient(to right, rgb(203 213 225 / 0.2) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(203 213 225 / 0.2) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .content-section {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+
+  .content-section::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-b from-slate-50/50 to-transparent opacity-75;
+    pointer-events: none;
+  }
+}
+
+.pattern-bg {
+  background-image: radial-gradient(circle at 1px 1px, rgb(203 213 225 / 0.3) 1px, transparent 0);
+  background-size: 40px 40px;
 }
