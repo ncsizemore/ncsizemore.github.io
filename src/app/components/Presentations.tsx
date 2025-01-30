@@ -1,30 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { presentationsData } from '@/data/presentations';
+import { projectTitles } from '@/data/projects';
 import type { Presentation } from '@/types';
-
-// Add map of slugs to friendly titles
-const projectTitles: Record<string, string> = {
-    "hlb-model": "Stochastic Model of HLB Disease Spread",
-    "microbiome": "Quantified Microbiome Analysis"
-};
-
-const presentationsData: { items: Presentation[] } = {
-    items: [
-        {
-            title: "A Multiscale Stochastic Model of Statewide HLB Spread in Florida",
-            type: "slides",
-            url: "/presentations/hlb-spread-model/index.html",
-            relatedProject: "hlb-model"
-        },
-        {
-            title: "Qbiome: Reverse-engineering the Infant Microbiome To Predict Severe Neurodevelopmental Deficits",
-            type: "slides",
-            url: "/presentations/microbiome-embedding/index.html",
-            relatedProject: "microbiome"
-        }
-    ]
-};
 
 export function Presentations() {
     const presentations: Presentation[] = presentationsData.items;

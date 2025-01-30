@@ -1,35 +1,33 @@
 'use client';
 
-import { useState } from 'react';
+const institutions = [
+  {
+    name: "University of Florida",
+    url: "https://www.ufl.edu/",
+    role: "Graduate Student Instructor",
+    description: "As a graduate student at UF, I taught classes as the primary instructor (responsible for all course content), and as a teaching assistant.",
+    courses: [
+      "MAC 1140: Precalculus Algebra",
+      "MAC 1147: Precalculus Algebra & Trigonometry",
+      "MAC 2311: Calculus I",
+      "MAC 2312: Calculus II",
+      "MAC 2313: Calculus III"
+    ]
+  },
+  {
+    name: "Western Carolina University",
+    url: "https://www.wcu.edu/",
+    role: "Lecturer",
+    description: "At WCU, I worked as a Lecturer, teaching the following courses (multiple sections, ~30 students per section):",
+    courses: [
+      "MATH 130: College Algebra",
+      "MATH 146: Precalculus",
+      "MATH 153: Calculus I"
+    ]
+  }
+];
 
 export function Teaching() {
-  const institutions = [
-    {
-      name: "University of Florida",
-      url: "https://www.ufl.edu/",
-      role: "Graduate Student Instructor",
-      description: "As a graduate student at UF, I taught classes as the primary instructor (responsible for all course content), and as a teaching assistant.",
-      courses: [
-        "MAC 1140: Precalculus Algebra",
-        "MAC 1147: Precalculus Algebra & Trigonometry",
-        "MAC 2311: Calculus I",
-        "MAC 2312: Calculus II",
-        "MAC 2313: Calculus III"
-      ]
-    },
-    {
-      name: "Western Carolina University",
-      url: "https://www.wcu.edu/",
-      role: "Lecturer",
-      description: "At WCU, I worked as a Lecturer, teaching the following courses (multiple sections, ~30 students per section):",
-      courses: [
-        "MATH 130: College Algebra",
-        "MATH 146: Precalculus",
-        "MATH 153: Calculus I"
-      ]
-    }
-  ];
-
   return (
     <section>
       <h2 className="text-2xl font-bold mb-6 font-sans tracking-tight text-gray-900">Teaching</h2>

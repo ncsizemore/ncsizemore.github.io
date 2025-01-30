@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import publicationsData from '../../content/publications.json';
+import { publicationsData } from '@/data/publications';
 
 interface Publication {
     title: string;
