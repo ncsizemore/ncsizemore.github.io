@@ -44,7 +44,12 @@ export function Header() {
                 </button>
 
                 {/* Past Positions */}
-                <div className={`transition-all duration-500 ease-in-out ${isExpanded ? 'opacity-100 max-h-[500px]' : 'opacity-0 max-h-0'}`}>
+                <div
+                    className={`transition-all duration-500 ease-in-out ${isExpanded
+                            ? 'opacity-100 max-h-[500px] visible pointer-events-auto'
+                            : 'opacity-0 max-h-0 invisible pointer-events-none'
+                        }`}
+                >
                     <div className="space-y-4">
                         {/* Postdoc */}
                         <div className="relative">
