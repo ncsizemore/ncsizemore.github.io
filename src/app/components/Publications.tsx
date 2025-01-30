@@ -16,8 +16,7 @@ interface Publication {
 
 export function Publications() {
     const [expandedBibtex, setExpandedBibtex] = useState<number | null>(null);
-    const [hoveredLink, setHoveredLink] = useState<string | null>(null);
-    const papers: Publication[] = publicationsData.papers;
+    const publications = publicationsData.items;
 
     const toggleBibtex = (index: number) => {
         setExpandedBibtex(expandedBibtex === index ? null : index);
@@ -27,7 +26,7 @@ export function Publications() {
         <section>
             <h2 className="text-2xl font-bold mb-6 font-sans tracking-tight text-gray-900">Publications</h2>
             <div className="space-y-8">
-                {papers.map((pub, index) => (
+                {publications.map((pub, index) => (
                     <article key={index} className="space-y-2">
                         <h3 className="text-base font-bold leading-snug">
                             {pub.title}

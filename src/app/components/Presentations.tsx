@@ -27,7 +27,6 @@ const presentationsData: { items: Presentation[] } = {
 };
 
 export function Presentations() {
-    const [hoveredLink, setHoveredLink] = useState<string | null>(null);
     const presentations: Presentation[] = presentationsData.items;
 
     return (

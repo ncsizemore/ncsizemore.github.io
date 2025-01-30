@@ -3,8 +3,6 @@
 import { useState } from 'react';
 
 export function Teaching() {
-  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
-
   const institutions = [
     {
       name: "University of Florida",
