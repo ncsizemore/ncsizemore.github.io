@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { publicationsData } from '@/data/publications';
+import publicationsData from '../../content/publications.json';
 
 interface Publication {
     title: string;
@@ -16,7 +16,8 @@ interface Publication {
 
 export function Publications() {
     const [expandedBibtex, setExpandedBibtex] = useState<number | null>(null);
-    const publications = publicationsData.items;
+    const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+    const papers: Publication[] = publicationsData.papers;
 
     const toggleBibtex = (index: number) => {
         setExpandedBibtex(expandedBibtex === index ? null : index);
@@ -24,9 +25,9 @@ export function Publications() {
 
     return (
         <section>
-            <h2 className="text-2xl font-bold mb-6 font-sans tracking-tight text-gray-900">Publications</h2>
+            <h2 className="text-2xl font-bold mb-6">Publications</h2>
             <div className="space-y-8">
-                {publications.map((pub, index) => (
+                {papers.map((pub, index) => (
                     <article key={index} className="space-y-2">
                         <h3 className="text-base font-bold leading-snug">
                             {pub.title}
@@ -48,9 +49,15 @@ export function Publications() {
                             {pub.doi && (
                                 <a
                                     href={pub.doi}
+                                    onMouseEnter={() => setHoveredLink(`doi-${index}`)}
+                                    onMouseLeave={() => setHoveredLink(null)}
+                                    className={`inline-block p-1.5 border border-gray-100 rounded-sm transition-all duration-200
+                                        ${hoveredLink === `doi-${index}`
+                                            ? 'bg-gray-50 text-gray-900 scale-[1.01]'
+                                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'
+                                        }`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-block font-mono text-sm p-1.5 border border-gray-100 rounded-sm transition-all duration-200 text-gray-600 hover:bg-gray-50 hover:text-gray-800"
                                 >
                                     [DOI]
                                 </a>
@@ -58,7 +65,13 @@ export function Publications() {
                             {pub.bibtex && (
                                 <button
                                     onClick={() => toggleBibtex(index)}
-                                    className="inline-block font-mono text-sm p-1.5 border border-gray-100 rounded-sm transition-all duration-200 text-gray-600 hover:bg-gray-50 hover:text-gray-800"
+                                    onMouseEnter={() => setHoveredLink(`bibtex-${index}`)}
+                                    onMouseLeave={() => setHoveredLink(null)}
+                                    className={`inline-block p-1.5 border border-gray-100 rounded-sm font-mono transition-all duration-200
+                                        ${hoveredLink === `bibtex-${index}`
+                                            ? 'bg-gray-50 text-gray-900 scale-[1.01]'
+                                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'
+                                        }`}
                                 >
                                     [BibTeX]
                                 </button>
