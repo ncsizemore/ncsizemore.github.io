@@ -27,7 +27,7 @@ const contactData: ContactInfo = {
 export function Contact() {
     return (
         <section>
-            <h2 className="text-xl font-bold mb-6">Contact</h2>
+            <h2 className="text-2xl font-bold mb-6 font-sans tracking-tight text-gray-900">Contact</h2>
             <div className="text-sm space-y-4">
                 {contactData.notice ? (
                     <p className="text-gray-600 italic">

@@ -33,8 +33,8 @@ export function Teaching() {
   ];
 
   return (
-    <section className="border-t border-gray-200/75">
-      <h2 className="text-2xl font-bold mb-8 text-gray-800">Teaching</h2>
+    <section>
+      <h2 className="text-2xl font-bold mb-6 font-sans tracking-tight text-gray-900">Teaching</h2>
 
       <div className="space-y-8">
         <p className="text-sm text-gray-600 leading-relaxed">
@@ -42,40 +42,27 @@ export function Teaching() {
           as an instructor through appointments at the following institutions.
         </p>
 
-        <div className="space-y-10">
-          {institutions.map((institution, index) => (
-            <article key={index} className="space-y-3">
-              <h3 className="text-base font-bold leading-snug">
-                <a
-                  href={institution.url}
-                  onMouseEnter={() => setHoveredLink(institution.name)}
-                  onMouseLeave={() => setHoveredLink(null)}
-                  className={`font-mono text-sm px-1.5 py-0.5 rounded-sm inline-block transition-all duration-200
-                    ${hoveredLink === institution.name
-                      ? 'bg-gray-100 text-gray-900 scale-[1.01]'
-                      : 'text-gray-700 hover:bg-gray-50 hover:text-gray-800'
-                    }`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  [{institution.name}]
-                </a>
-              </h3>
-
-              <p className="text-sm text-gray-600 leading-relaxed pl-5">
-                {institution.description}
-              </p>
-
-              <ul className="text-sm space-y-1.5 list-disc marker:text-gray-300 pl-10">
-                {institution.courses.map((course, courseIndex) => (
-                  <li key={courseIndex} className="text-sm leading-relaxed text-gray-500">
-                    {course}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
+        {institutions.map((institution) => (
+          <div key={institution.name} className="space-y-2">
+            <div className="flex items-baseline gap-3">
+              <span className="font-sans font-medium text-gray-900">{institution.role}</span>
+              <a
+                href={institution.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block font-mono text-sm p-1.5 border border-gray-100 rounded-sm transition-all duration-200 text-gray-600 hover:bg-gray-50 hover:text-gray-800"
+              >
+                [{institution.name}]
+              </a>
+            </div>
+            <p className="text-sm text-gray-600">{institution.description}</p>
+            <ul className="list-disc list-inside text-sm text-gray-600 ml-4 space-y-1">
+              {institution.courses.map((course) => (
+                <li key={course}>{course}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   );

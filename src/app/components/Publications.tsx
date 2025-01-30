@@ -25,7 +25,7 @@ export function Publications() {
 
     return (
         <section>
-            <h2 className="text-2xl font-bold mb-6">Publications</h2>
+            <h2 className="text-2xl font-bold mb-6 font-sans tracking-tight text-gray-900">Publications</h2>
             <div className="space-y-8">
                 {papers.map((pub, index) => (
                     <article key={index} className="space-y-2">
@@ -49,15 +49,9 @@ export function Publications() {
                             {pub.doi && (
                                 <a
                                     href={pub.doi}
-                                    onMouseEnter={() => setHoveredLink(`doi-${index}`)}
-                                    onMouseLeave={() => setHoveredLink(null)}
-                                    className={`inline-block p-1.5 border border-gray-100 rounded-sm transition-all duration-200
-                                        ${hoveredLink === `doi-${index}`
-                                            ? 'bg-gray-50 text-gray-900 scale-[1.01]'
-                                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'
-                                        }`}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    className="inline-block font-mono text-sm p-1.5 border border-gray-100 rounded-sm transition-all duration-200 text-gray-600 hover:bg-gray-50 hover:text-gray-800"
                                 >
                                     [DOI]
                                 </a>
@@ -65,13 +59,7 @@ export function Publications() {
                             {pub.bibtex && (
                                 <button
                                     onClick={() => toggleBibtex(index)}
-                                    onMouseEnter={() => setHoveredLink(`bibtex-${index}`)}
-                                    onMouseLeave={() => setHoveredLink(null)}
-                                    className={`inline-block p-1.5 border border-gray-100 rounded-sm font-mono transition-all duration-200
-                                        ${hoveredLink === `bibtex-${index}`
-                                            ? 'bg-gray-50 text-gray-900 scale-[1.01]'
-                                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'
-                                        }`}
+                                    className="inline-block font-mono text-sm p-1.5 border border-gray-100 rounded-sm transition-all duration-200 text-gray-600 hover:bg-gray-50 hover:text-gray-800"
                                 >
                                     [BibTeX]
                                 </button>

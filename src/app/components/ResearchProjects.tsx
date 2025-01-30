@@ -127,7 +127,7 @@ export function ResearchProjects() {
 
   return (
     <section>
-      <h2 className="text-2xl font-bold mb-6">Research</h2>
+      <h2 className="text-2xl font-bold mb-6 font-sans tracking-tight text-gray-900">Research</h2>
       <div className="space-y-6">
         {orderedProjects.map(([slug, project]) => {
           const projectContent = extractProjectContent(project.rawContent);

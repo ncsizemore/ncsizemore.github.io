@@ -32,7 +32,7 @@ export function Presentations() {
 
     return (
         <section>
-            <h2 className="text-2xl font-bold mb-6 font-sans tracking-tight">Presentations</h2>
+            <h2 className="text-2xl font-bold mb-6 font-sans tracking-tight text-gray-900">Presentations</h2>
 
             <div className="space-y-4">
                 {presentations.map((presentation) => (
@@ -52,17 +52,10 @@ export function Presentations() {
                             href={presentation.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onMouseEnter={() => setHoveredLink(presentation.title)}
-                            onMouseLeave={() => setHoveredLink(null)}
-                            className={`inline-block font-mono text-sm p-1.5 border border-gray-100 rounded-sm transition-all duration-200
-                                ${hoveredLink === presentation.title
-                                    ? 'bg-gray-50 text-gray-900 scale-[1.01]'
-                                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'
-                                }`}
+                            className="inline-block font-mono text-sm p-1.5 border border-gray-100 rounded-sm transition-all duration-200 text-gray-600 hover:bg-gray-50 hover:text-gray-800"
                         >
                             [slides]
                         </a>
-
                     </div>
                 ))}
             </div>

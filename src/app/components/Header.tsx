@@ -17,7 +17,7 @@ export function Header() {
                     {isExpanded && <div className="absolute -left-[1.25rem] top-2 w-2.5 h-2.5 rounded-full bg-gray-400"></div>}
                     <div className="flex justify-between items-baseline">
                         <span className="font-sans text-xl font-bold tracking-tight text-gray-900">Sr. Research Programmer Analyst</span>
-                        <span className="font-sans text-lg font-medium text-gray-500 ml-6">2025–</span>
+                        {isExpanded && <span className="font-sans text-lg font-medium text-gray-500 ml-6">2025–</span>}
                     </div>
                     <div className="font-serif text-gray-600">Department of Epidemiology</div>
                     <div className="font-serif text-gray-600">Johns Hopkins University</div>
