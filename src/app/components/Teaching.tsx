@@ -1,5 +1,7 @@
 'use client';
 
+import { SectionHeading } from './SectionHeading';
+
 const institutions = [
   {
     name: "University of Florida",
@@ -30,10 +32,10 @@ const institutions = [
 export function Teaching() {
   return (
     <section>
-      <h2 className="text-2xl font-bold mb-6 font-sans tracking-tight text-gray-900">Teaching</h2>
+      <SectionHeading index="06" title="Teaching" />
 
       <div className="space-y-8">
-        <p className="text-sm text-gray-600 leading-relaxed">
+        <p className="text-sm text-stone-600 leading-relaxed">
           While I am not currently teaching any courses, I have several years of experience
           as an instructor through appointments at the following institutions.
         </p>
@@ -41,18 +43,18 @@ export function Teaching() {
         {institutions.map((institution) => (
           <div key={institution.name} className="space-y-2">
             <div className="flex items-baseline gap-3">
-              <span className="font-sans font-medium text-gray-900">{institution.role}</span>
+              <span className="font-sans font-medium text-stone-900">{institution.role}</span>
               <a
                 href={institution.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block font-mono text-sm p-1.5 border border-gray-100 rounded-sm transition-all duration-200 text-gray-600 hover:bg-gray-50 hover:text-gray-800"
+                className="inline-block font-mono text-sm p-1.5 border border-stone-100 rounded-sm transition-all duration-200 text-stone-600 hover:bg-stone-50 hover:text-stone-800"
               >
                 [{institution.name}]
               </a>
             </div>
-            <p className="text-sm text-gray-600">{institution.description}</p>
-            <ul className="list-disc list-inside text-sm text-gray-600 ml-4 space-y-1">
+            <p className="text-sm text-stone-600">{institution.description}</p>
+            <ul className="list-disc list-inside text-sm text-stone-600 ml-4 space-y-1">
               {institution.courses.map((course) => (
                 <li key={course}>{course}</li>
               ))}

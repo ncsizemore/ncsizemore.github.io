@@ -1,0 +1,37 @@
+{
+  "items": [
+    {
+      "title": "JHEEM Portal",
+      "role": "Designed & built the full platform",
+      "live": true,
+      "description": "A public web platform presenting the Johns Hopkins HIV Epidemiologic & Economic Model (JHEEM): Ryan White funding-disruption analyses (31 metro areas; 11- and 30-state studies), CDC-testing cessation (18 states), HIV aging projections (24 states), and on-demand custom simulations. Containerized R models generate results through automated pipelines; a Next.js frontend serves them.",
+      "tech": ["Next.js", "TypeScript", "R", "Docker", "GitHub Actions", "AWS S3"],
+      "links": [
+        { "label": "Live — jheem.org", "url": "https://jheem.org" },
+        { "label": "Code", "url": "https://github.com/ncsizemore/jheem-portal" }
+      ]
+    },
+    {
+      "title": "Reproducible modeling infrastructure",
+      "role": "Built the team's build-and-release system",
+      "live": false,
+      "description": "A shared Docker base image and family of model containers (renv-pinned R, with model engines version-matched to their simulation data), a release system distributing 180GB+ of simulation outputs, and a CI/CD pipeline that builds, versions, validates, and publishes the team's data assets — replacing manual file-link sharing with reproducible, traceable releases.",
+      "tech": ["Docker", "R", "GitHub Actions", "renv", "Self-hosted runners"],
+      "links": [
+        { "label": "jheem-base", "url": "https://github.com/ncsizemore/jheem-base" },
+        { "label": "jheem-simulations", "url": "https://github.com/ncsizemore/jheem-simulations" }
+      ]
+    },
+    {
+      "title": "Computational Epidemiology Lab site + Global HIV Aging app",
+      "role": "Designed & built",
+      "live": true,
+      "description": "The Johns Hopkins Computational Epidemiology Lab website, including an interactive Global HIV Aging application that lets users explore age-distribution projections across countries.",
+      "tech": ["Next.js", "TypeScript", "React", "Tailwind"],
+      "links": [
+        { "label": "Live", "url": "https://jhu-comp-epi.vercel.app" },
+        { "label": "Code", "url": "https://github.com/ncsizemore/jhu-comp-epi" }
+      ]
+    }
+  ]
+}

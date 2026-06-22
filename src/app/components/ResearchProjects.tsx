@@ -5,6 +5,7 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import projectsData from '../../content/research-projects.json';
+import { SectionHeading } from './SectionHeading';
 
 interface Project {
   title: string;
@@ -24,10 +25,7 @@ interface ProjectText {
 
 const projectOrder = [
   'microbiome',
-  'hlb-model',
   'ai-text',
-  'deception',
-  'spectral',
   'group-partitions'
 ];
 
@@ -127,7 +125,11 @@ export function ResearchProjects() {
 
   return (
     <section>
-      <h2 className="text-2xl font-bold mb-6 font-sans tracking-tight text-gray-900">Research</h2>
+      <SectionHeading index="05" title="Earlier Research" />
+      <p className="text-sm text-stone-600 leading-relaxed mb-6 max-w-2xl">
+        Selected threads from my doctoral and postdoctoral work, spanning generative-ML methods
+        in biomedicine and pure mathematics.
+      </p>
       <div className="space-y-6">
         {orderedProjects.map(([slug, project]) => {
           const projectContent = extractProjectContent(project.rawContent);
@@ -135,12 +137,12 @@ export function ResearchProjects() {
           const previewText = cleanPreviewText(projectContent.text);
 
           return (
-            <article key={slug} className="border border-gray-100 rounded-md">
+            <article key={slug} className="border border-stone-100 rounded-md">
               <button
                 onClick={() => toggleProject(slug)}
-                className="w-full flex items-start gap-3 p-4 text-left hover:bg-gray-50 transition-colors"
+                className="w-full flex items-start gap-3 p-4 text-left hover:bg-stone-50 transition-colors"
               >
-                <span className="font-mono text-sm mt-0.5 text-gray-500">
+                <span className="font-mono text-sm mt-0.5 text-stone-500">
                   {expandedProjects[slug] ? '[−]' : '[+]'}
                 </span>
                 <div className="flex-1">
@@ -148,7 +150,7 @@ export function ResearchProjects() {
                     {project.title}
                   </h3>
                   {!expandedProjects[slug] && (
-                    <p className="text-sm text-gray-600 leading-relaxed">
+                    <p className="text-sm text-stone-600 leading-relaxed">
                       {previewText.slice(0, 160)}...
                     </p>
                   )}
@@ -156,7 +158,7 @@ export function ResearchProjects() {
               </button>
 
               {expandedProjects[slug] && (
-                <div className="px-4 pb-4 border-t border-gray-100">
+                <div className="px-4 pb-4 border-t border-stone-100">
                   <div className="mb-3 text-sm">
                     <ReactMarkdown
                       components={{
@@ -167,7 +169,7 @@ export function ResearchProjects() {
                     </ReactMarkdown>
                   </div>
 
-                  <div className="prose prose-sm max-w-none text-gray-600 mb-4">
+                  <div className="prose prose-sm max-w-none text-stone-600 mb-4">
                     <ReactMarkdown
                       remarkPlugins={[remarkMath]}
                       rehypePlugins={[rehypeKatex]}
@@ -180,7 +182,7 @@ export function ResearchProjects() {
                         li: ({ ...props }) => <li className="text-sm leading-relaxed" {...props} />,
                         a: ({ ...props }) => (
                           <a
-                            className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                            className="text-teal-700 hover:text-teal-900 transition-colors duration-200"
                             target="_blank"
                             rel="noopener noreferrer"
                             {...props}
@@ -193,15 +195,15 @@ export function ResearchProjects() {
                   </div>
 
                   {softwareLink && (
-                    <div className="pt-3 border-t border-gray-100">
+                    <div className="pt-3 border-t border-stone-100">
                       <a
                         href={softwareLink.url}
                         onMouseEnter={() => setHoveredLink(`${slug}-software`)}
                         onMouseLeave={() => setHoveredLink(null)}
-                        className={`inline-block font-mono text-sm p-1.5 border border-gray-100 rounded-sm transition-all duration-200
+                        className={`inline-block font-mono text-sm p-1.5 border border-stone-100 rounded-sm transition-all duration-200
                           ${hoveredLink === `${slug}-software`
-                            ? 'bg-gray-50 text-gray-900 scale-[1.01]'
-                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'
+                            ? 'bg-stone-50 text-stone-900 scale-[1.01]'
+                            : 'text-stone-600 hover:bg-stone-50 hover:text-stone-800'
                           }`}
                         target="_blank"
                         rel="noopener noreferrer"

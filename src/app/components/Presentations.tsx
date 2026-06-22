@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import type { Presentation } from '@/types';
+import { SectionHeading } from './SectionHeading';
 
 // Add map of slugs to friendly titles
 const projectTitles: Record<string, string> = {
@@ -32,7 +33,7 @@ export function Presentations() {
 
     return (
         <section>
-            <h2 className="text-2xl font-bold mb-6 font-sans tracking-tight">Presentations</h2>
+            <SectionHeading index="06" title="Presentations" />
 
             <div className="space-y-4">
                 {presentations.map((presentation) => (

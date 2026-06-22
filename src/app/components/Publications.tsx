@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import publicationsData from '../../content/publications.json';
+import { SectionHeading } from './SectionHeading';
 
 interface Publication {
     title: string;
@@ -11,6 +12,7 @@ interface Publication {
     pages?: string;
     year: number;
     doi?: string;
+    note?: string;
     bibtex?: string;
 }
 
@@ -25,7 +27,7 @@ export function Publications() {
 
     return (
         <section>
-            <h2 className="text-2xl font-bold mb-6">Publications</h2>
+            <SectionHeading index="04" title="Publications" />
             <div className="space-y-8">
                 {papers.map((pub, index) => (
                     <article key={index} className="space-y-2">
@@ -33,7 +35,7 @@ export function Publications() {
                             {pub.title}
                         </h3>
 
-                        <div className="text-sm text-gray-600">
+                        <div className="text-sm text-stone-600">
                             {pub.authors.join(", ")}
                         </div>
 
@@ -43,6 +45,7 @@ export function Publications() {
                             {pub.number && <span>({pub.number})</span>}
                             {pub.pages && <span>, {pub.pages}</span>}
                             {pub.year && <span>, {pub.year}</span>}
+                            {pub.note && <span className="ml-2 font-mono text-xs text-teal-700 not-italic">{pub.note}</span>}
                         </div>
 
                         <div className="space-x-3 font-mono text-xs">
@@ -51,10 +54,10 @@ export function Publications() {
                                     href={pub.doi}
                                     onMouseEnter={() => setHoveredLink(`doi-${index}`)}
                                     onMouseLeave={() => setHoveredLink(null)}
-                                    className={`inline-block p-1.5 border border-gray-100 rounded-sm transition-all duration-200
+                                    className={`inline-block p-1.5 border border-stone-100 rounded-sm transition-all duration-200
                                         ${hoveredLink === `doi-${index}`
-                                            ? 'bg-gray-50 text-gray-900 scale-[1.01]'
-                                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'
+                                            ? 'bg-stone-50 text-stone-900 scale-[1.01]'
+                                            : 'text-stone-600 hover:bg-stone-50 hover:text-stone-800'
                                         }`}
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -67,10 +70,10 @@ export function Publications() {
                                     onClick={() => toggleBibtex(index)}
                                     onMouseEnter={() => setHoveredLink(`bibtex-${index}`)}
                                     onMouseLeave={() => setHoveredLink(null)}
-                                    className={`inline-block p-1.5 border border-gray-100 rounded-sm font-mono transition-all duration-200
+                                    className={`inline-block p-1.5 border border-stone-100 rounded-sm font-mono transition-all duration-200
                                         ${hoveredLink === `bibtex-${index}`
-                                            ? 'bg-gray-50 text-gray-900 scale-[1.01]'
-                                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'
+                                            ? 'bg-stone-50 text-stone-900 scale-[1.01]'
+                                            : 'text-stone-600 hover:bg-stone-50 hover:text-stone-800'
                                         }`}
                                 >
                                     [BibTeX]
@@ -79,7 +82,7 @@ export function Publications() {
                         </div>
 
                         {expandedBibtex === index && pub.bibtex && (
-                            <pre className="mt-3 p-3 bg-gray-50 text-xs font-mono overflow-x-auto rounded border border-gray-100 whitespace-pre-wrap">
+                            <pre className="mt-3 p-3 bg-stone-50 text-xs font-mono overflow-x-auto rounded border border-stone-100 whitespace-pre-wrap">
                                 {pub.bibtex}
                             </pre>
                         )}

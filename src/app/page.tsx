@@ -1,26 +1,29 @@
-'use client';
-
-import { ResearchProjects } from './components/ResearchProjects';
+import { Hero } from './components/Hero';
+import { SelectedWork } from './components/SelectedWork';
+import { Trajectory } from './components/Trajectory';
+import { Skills } from './components/Skills';
 import { Publications } from './components/Publications';
-import { Contact } from './components/Contact';
-import { Header } from './components/Header';
+import { ResearchProjects } from './components/ResearchProjects';
 import { Teaching } from './components/Teaching';
-import { Presentations } from './components/Presentations';
+import { Contact } from './components/Contact';
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
-      <div className="max-w-3xl mx-auto px-8 py-16">
-        <div className="bg-[#fdfbf7] rounded-2xl shadow-sm border border-gray-100/50 p-10">
-          <Header />
-          <main className="mt-10 space-y-10">
-            <ResearchProjects />
-            <Teaching />
-            <Presentations />
-            <Publications />
-            <Contact />
-          </main>
-        </div>
+    <div className="min-h-screen bg-stone-50">
+      <div className="max-w-3xl mx-auto px-6 sm:px-8 py-20 sm:py-24">
+        <Hero />
+        <main className="mt-20 space-y-20">
+          <SelectedWork />
+          <Trajectory />
+          <Skills />
+          <Publications />
+          <ResearchProjects />
+          <Teaching />
+          <Contact />
+        </main>
+        <footer className="mt-24 pt-8 border-t border-stone-100 font-mono text-xs text-stone-400">
+          © 2026 Nicholas Sizemore
+        </footer>
       </div>
     </div>
   );

@@ -7,9 +7,14 @@ export function Header() {
 
     return (
         <header className={`${isExpanded ? 'mb-10' : 'mb-4'}`}>
-            <h1 className="text-4xl font-bold mb-8 font-sans tracking-tight text-gray-900">
+            <h1 className="text-4xl font-bold mb-3 font-sans tracking-tight text-gray-900">
                 Nicholas Sizemore
             </h1>
+
+            <p className="text-base text-gray-600 leading-relaxed mb-8 max-w-2xl">
+                Computational scientist &amp; research software engineer — I build the tools and
+                infrastructure that make epidemiological modeling reproducible and accessible.
+            </p>
 
             <div className={`pl-4 border-l-2 transition-all duration-500 ease-in-out ${isExpanded ? 'border-gray-200' : 'border-transparent'} ${isExpanded ? 'space-y-4' : 'space-y-2'}`}>
                 {/* Current Position (always visible) */}

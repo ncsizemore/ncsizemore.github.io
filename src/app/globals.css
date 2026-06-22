@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,74 +6,48 @@
 
 @layer base {
   body {
-    @apply bg-slate-50 text-base leading-relaxed font-serif text-gray-800 antialiased;
+    @apply bg-stone-50 text-base leading-relaxed font-sans text-stone-700 antialiased;
     font-feature-settings: "liga" 1, "kern" 1;
   }
 
   h1,
   h2,
   h3 {
-    @apply font-sans tracking-tight;
-  }
-
-  h1 {
-    @apply text-4xl font-bold mb-8;
-    background: linear-gradient(to right, rgb(31, 41, 55), rgb(75, 85, 99));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  h2 {
-    @apply text-2xl font-bold mb-6 text-gray-900;
-  }
-
-  h3 {
-    @apply text-xl font-bold mb-4 text-gray-800;
+    @apply font-display tracking-tight text-stone-900;
   }
 
   a {
-    @apply transition-colors duration-200 text-blue-600 hover:text-blue-800;
+    @apply transition-colors duration-200 text-teal-700 hover:text-teal-900;
   }
 
-  section {
-    @apply border-t border-gray-200 pt-10 mb-12;
+  ::selection {
+    @apply bg-teal-100 text-teal-900;
   }
 }
 
 @layer components {
   .prose {
-    @apply text-gray-800 max-w-none;
+    @apply text-stone-700 max-w-none;
   }
 
   .prose a {
-    @apply text-blue-600 hover:text-blue-800 border-b border-blue-200 hover:border-blue-600;
+    @apply text-teal-700 hover:text-teal-900 border-b border-teal-200 hover:border-teal-600;
   }
 
-  .hero-pattern {
-    background-image: radial-gradient(circle at 1.5px 1.5px, rgb(203 213 225 / 0.6) 1.5px, transparent 0);
-    background-size: 26px 26px;
-    background-color: rgb(241 245 249);
-  }
-
-  .section-pattern {
+  /* Subtle graph-paper motif — data/measurement, not literal */
+  .grid-paper {
     background-image:
-      linear-gradient(to right, rgb(203 213 225 / 0.2) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(203 213 225 / 0.2) 1px, transparent 1px);
-    background-size: 20px 20px;
-  }
-
-  .content-section {
-    @apply relative overflow-hidden transition-all duration-300;
-  }
-
-  .content-section::before {
-    content: '';
-    @apply absolute inset-0 bg-gradient-to-b from-slate-50/50 to-transparent opacity-75;
-    pointer-events: none;
+      linear-gradient(to right, rgb(120 113 108 / 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(120 113 108 / 0.07) 1px, transparent 1px);
+    background-size: 26px 26px;
   }
 }
 
-.pattern-bg {
-  background-image: radial-gradient(circle at 1px 1px, rgb(203 213 225 / 0.3) 1px, transparent 0);
-  background-size: 40px 40px;
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-rise {
+  animation: rise 0.5s cubic-bezier(0.2, 0.6, 0.2, 1) both;
 }
