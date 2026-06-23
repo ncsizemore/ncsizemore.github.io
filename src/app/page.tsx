@@ -3,8 +3,6 @@ import { SelectedWork } from './components/SelectedWork';
 import { Trajectory } from './components/Trajectory';
 import { Skills } from './components/Skills';
 import { Publications } from './components/Publications';
-import { ResearchProjects } from './components/ResearchProjects';
-import { Teaching } from './components/Teaching';
 import { Contact } from './components/Contact';
 
 export default function Home() {
@@ -17,8 +15,6 @@ export default function Home() {
           <Trajectory />
           <Skills />
           <Publications />
-          <ResearchProjects />
-          <Teaching />
           <Contact />
         </main>
         <footer className="mt-24 pt-8 border-t border-stone-100 font-mono text-xs text-stone-400">

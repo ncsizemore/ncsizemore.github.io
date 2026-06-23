@@ -20,6 +20,9 @@
 # production
 /build
 
+# private working documents (intentionally local-only)
+/private/
+
 # misc
 .DS_Store
 *.pem

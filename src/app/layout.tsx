@@ -1,9 +1,23 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import './globals.css';
 
-export const metadata = {
-  title: 'Nicholas Sizemore | Computational Biology',
-  description: 'Research in network science, computational biology, and AI-driven biological systems analysis.',
+const title = 'Nicholas Sizemore | Computational Scientist & Research Software Engineer';
+const description =
+  'Computational scientist and research software engineer building reproducible scientific modeling infrastructure, cloud pipelines, and public tools, with current work in epidemiology.';
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://ncsizemore.github.io'),
+  title,
+  description,
+  keywords: [
+    'computational scientist',
+    'research software engineer',
+    'scientific software',
+    'scientific modeling',
+    'epidemiological modeling',
+    'reproducible computing',
+  ],
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' },
@@ -14,9 +28,19 @@ export const metadata = {
     ],
   },
   openGraph: {
-    title: 'Nicholas Sizemore | Computational Biology',
-    description: 'Research in network science, computational biology, and AI-driven biological systems analysis.',
+    title,
+    description,
+    url: '/',
+    siteName: 'Nicholas Sizemore',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title,
+    description,
+  },
+  alternates: {
+    canonical: '/',
   },
   robots: {
     index: true,
@@ -27,7 +51,7 @@ export const metadata = {
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#ffffff'
+  themeColor: '#fafaf9'
 };
 
 export default function RootLayout({
@@ -37,9 +61,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="hero-pattern">
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

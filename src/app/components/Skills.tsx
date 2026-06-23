@@ -1,27 +1,29 @@
-'use client';
 import { SectionHeading } from './SectionHeading';
 
 const skillGroups = [
+  {
+    label: 'Modeling',
+    items: ['Compartmental / ODE models', 'Stochastic simulation', 'Sensitivity analysis', 'Applied & generative ML'],
+  },
+  {
+    label: 'Scientific computing',
+    items: ['Reproducible environments', 'Versioned data', 'Provenance', 'Numerical verification'],
+  },
+  {
+    label: 'Systems',
+    items: ['Data pipelines', 'APIs', 'Interactive applications', 'Config-driven architecture'],
+  },
+  {
+    label: 'Infrastructure',
+    items: ['AWS', 'Docker', 'GitHub Actions', 'Linux / RHEL', 'Self-hosted runners'],
+  },
   { label: 'Languages', items: ['R', 'Python', 'TypeScript / JavaScript', 'Shell'] },
-  { label: 'Web', items: ['Next.js', 'React', 'Astro', 'Tailwind'] },
-  {
-    label: 'Cloud & DevOps',
-    items: ['AWS (S3, ECR)', 'Docker', 'GitHub Actions', 'Serverless Framework', 'Linux / RHEL administration'],
-  },
-  {
-    label: 'Reproducible computing',
-    items: ['renv', 'Containerization', 'Versioned data releases', 'CI/CD pipelines'],
-  },
-  {
-    label: 'Modeling & science',
-    items: ['Compartmental / ODE epidemic models', 'Stochastic spatial simulation', 'Bayesian methods', 'Applied & generative ML'],
-  },
 ];
 
 export function Skills() {
   return (
     <section>
-      <SectionHeading index="03" title="Skills" />
+      <SectionHeading index="03" title="Capabilities" />
       <dl className="space-y-3">
         {skillGroups.map((group) => (
           <div key={group.label} className="sm:flex sm:gap-5">

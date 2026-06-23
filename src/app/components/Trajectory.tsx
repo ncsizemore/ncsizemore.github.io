@@ -13,10 +13,10 @@ interface Stage {
 const stages: Stage[] = [
   {
     period: '2025 —',
-    role: 'Research Software Engineer',
-    where: 'Johns Hopkins · Epidemiology',
+    role: 'Sr. Research Programmer Analyst',
+    where: 'Research software engineering · Johns Hopkins Epidemiology',
     detail:
-      'Design and operate the platforms and infrastructure behind HIV-policy modeling — from containerized, reproducible models to the public tools at jheem.org.',
+      'Design and operate the platforms behind HIV-policy modeling, while contributing directly to model implementation, analysis, and reproducibility.',
     proof: { label: 'jheem.org', url: 'https://jheem.org' },
   },
   {
@@ -25,7 +25,7 @@ const stages: Stage[] = [
     where: 'University of Chicago · Medicine',
     detail:
       'Built novel generative-AI methods for biomedicine, including a digital twin of the infant microbiome that predicts neurodevelopmental risk.',
-    proof: { label: 'Science Advances (2024)', url: 'https://doi.org/10.1126/sciadv.adj0400' },
+    proof: { label: 'Science Advances · 40+ citations', url: 'https://doi.org/10.1126/sciadv.adj0400' },
   },
   {
     period: '2015 – 2021',
@@ -46,9 +46,9 @@ export function Trajectory() {
 
       <div className="rounded-xl border border-stone-200 bg-white grid-paper p-6 sm:p-8">
         <p className="font-mono text-xs sm:text-sm text-stone-500 mb-8">
-          mathematics<span className="text-teal-600 px-1">→</span>machine learning
-          <span className="text-teal-600 px-1">→</span>epidemiology
-          <span className="text-teal-600 px-1">→</span>production systems
+          mathematics<span className="text-teal-600 px-1">+</span>modeling
+          <span className="text-teal-600 px-1">+</span>machine learning
+          <span className="text-teal-600 px-1">+</span>production systems
         </p>
 
         <ol className="relative border-l border-stone-200 ml-1">

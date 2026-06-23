@@ -1,6 +1,8 @@
-# Personal Academic Website
+# Nicholas Sizemore — Personal Site
 
-Personal academic website built with Next.js, focusing on research projects in computational/mathematical modeling of complex systems.
+Work-led portfolio for a computational scientist and research software engineer.
+The site emphasizes scientific software, reproducible modeling infrastructure,
+current modeling work, and selected publications.
 
 ## Local Development
 
@@ -12,55 +14,42 @@ npm run dev
 
 The site will be available at [http://localhost:3000](http://localhost:3000).
 
-## Project Structure
+## Project structure
 
 ```
 src/
 ├── types.ts           # TypeScript type definitions
 └── app/
     ├── components/    # React components
-    │   ├── Header.tsx
-    │   ├── Presentations.tsx
+    │   ├── Hero.tsx
+    │   ├── SelectedWork.tsx
+    │   ├── Trajectory.tsx
+    │   ├── Skills.tsx
     │   ├── Publications.tsx
-    │   ├── ResearchProjects.tsx
-    │   └── Teaching.tsx
-    ├── content/       # JSON data files
+    │   └── Contact.tsx
+    ├── content/       # Structured site content
+    │   ├── selected-work.json
     │   ├── publications.json
-    │   └── research-projects.json
     ├── page.tsx       # Main page component
     └── layout.tsx     # Root layout
-
-public/               # Static assets          # Static assets
-└── presentations/   # Presentation files
-    ├── hlb-spread-model/     # HLB spread modeling presentation
-    │   ├── css/
-    │   ├── libs/
-    │   └── figures/
-    └── microbiome-embedding/ # Microbiome analysis presentation
-        ├── style/
-        └── img/
 ```
 
-## Content Management
+## Content management
 
-Content is managed through several sources:
-- `research-projects.json`: Individual research project details
-- `publications.json`: Academic publications data
-- `presentations/`: HTML presentations and their assets
-- Types defined in `types.ts`
+- `src/content/selected-work.json`: flagship systems and active research
+- `src/content/publications.json`: publication record
+- `public/presentations/`: archived HTML presentations and assets
 
-## Development Notes
+## Development notes
 
-- Built with Next.js 14 and TypeScript
+- Built with Next.js 15 and TypeScript
 - Styled using Tailwind CSS
-- Mathematics rendered using KaTeX
-- Markdown content processed with ReactMarkdown
-- HTML presentations supported with custom styling
-- Development logging available for content debugging
+- Static export for GitHub Pages
+- HTML presentations retained as static assets
 
 ## Deployment
 
-The site is deployed to GitHub Pages using GitHub Actions. The deployment workflow automatically builds and deploys changes pushed to the main branch.
+The site is deployed to GitHub Pages using GitHub Actions.
 
 ## Original Template
 
